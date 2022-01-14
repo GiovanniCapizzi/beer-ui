@@ -1,0 +1,22 @@
+{
+  "name": "beer-ui-example",
+  "displayName": "BeerUi Example",
+  "expo": {
+    "name": "beer-ui-example",
+    "slug": "beer-ui-example",
+    "description": "Example app for beer-ui",
+    "privacy": "public",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
