@@ -4,11 +4,11 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import styled from 'styled-components';
-import colors from '../Common/colors';
+import { buttonColors } from '../Common/colors';
 import { Typography } from 'beer-ui';
 
 interface ITouchableOpacityStyle {
-  background: string;
+  variant: 'primary' | 'secondary';
 }
 
 export interface ButtonProps extends NativeButtonProps {
@@ -16,9 +16,9 @@ export interface ButtonProps extends NativeButtonProps {
 }
 
 const TouchableOpacityStyle = styled(TouchableOpacity)<ITouchableOpacityStyle>`
-  background: ${(p) => p.background};
+  background: ${(p) => buttonColors[p.variant].background};
   opacity: ${(p) => (p.disabled ? 0.5 : 1)};
-  border: 1px solid ${colors.primary};
+  border: 1px solid ${(p) => buttonColors[p.variant].border};
   font-weight: bold;
   padding: 16px 24px;
   border-radius: 32px;
@@ -27,19 +27,12 @@ const TouchableOpacityStyle = styled(TouchableOpacity)<ITouchableOpacityStyle>`
 `;
 
 export const Button: React.FC<ButtonProps> = ({ variant, title, ...props }) => {
-  const background = variant === 'primary' ? colors.primary : colors.light;
-  const textVariant = variant === 'secondary' ? 'accent' : 'primary';
 
   return (
-    <TouchableOpacityStyle
-      background={background}
-      activeOpacity={0.6}
-      {...props}
-    >
+    <TouchableOpacityStyle variant={variant} activeOpacity={0.6} {...props}>
       <Typography
-        variant={textVariant}
         text={title}
-        textStyle={{ fontWeight: 'bold' }}
+        textStyle={{ fontWeight: 'bold', color: buttonColors[variant].text }}
       />
     </TouchableOpacityStyle>
   );

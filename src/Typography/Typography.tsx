@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { StyleProp, Text, TextStyle, TouchableOpacity } from 'react-native';
-import colors from '../Common/colors';
+import { textColors } from '../Common/colors';
 import textSize from '../Common/sizes';
 
 export interface TypographyProps {
   text: string;
   onPress?: () => any;
   textStyle?: StyleProp<TextStyle>;
-  variant: 'primary' | 'secondary' | 'accent' | 'accentDark';
+  variant?: 'primary' | 'secondary';
   size?: 'small' | 'medium' | 'large';
 }
 
@@ -18,7 +18,7 @@ export const Typography: React.FC<TypographyProps> = ({
   size,
   textStyle,
 }) => {
-  const color = colors.text[variant];
+  const color = variant ? textColors[variant] : undefined;
   const fontSize = size ? textSize[size] : undefined;
 
   const component = (

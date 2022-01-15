@@ -1,27 +1,27 @@
-export interface IColors {
-  primary: string;
-  secondary: string;
-  dark: string;
-  light: string;
-  text: {
-    primary: string;
-    secondary: string;
-    accent: string;
-    accentDark: string;
-  };
-}
-
-const colors: IColors = {
-  primary: '#FBCE3E',
-  secondary: '#FBB23E',
-  dark: '#E8A131',
-  light: '#FFF',
-  text: {
-    primary: '#FFF',
-    secondary: '#585858',
-    accent: '#FBCE3E',
-    accentDark: '#FBB23E',
+const colors = {
+  accent: {
+    light: '#FBCE3E',
+    base: '#FBB23E',
+    dark: '#E8A131',
   },
+  white: '#FFF',
+  black: '#585858',
 };
 
-export default colors;
+export const buttonColors = {
+  primary: {
+    text: colors.white,
+    background: colors.accent.light,
+    border: colors.accent.light,
+  },
+  secondary: {
+    text: colors.accent.light,
+    background: colors.white,
+    border: colors.accent.light,
+  }
+};
+
+export const textColors = {
+  primary: colors.accent.base,
+  secondary: colors.black,
+};

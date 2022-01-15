@@ -10,13 +10,13 @@ export default function HomePage({ navigation }) {
       <Button
         title="Buttons"
         onPress={() => navigation.navigate('Buttons')}
-        variant={'primary'}
+        variant="primary"
       />
       <Text />
       <Button
         title="Typography"
         onPress={() => navigation.navigate('Typography')}
-        variant={'primary'}
+        variant="primary"
       />
     </View>
   );
