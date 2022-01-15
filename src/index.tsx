@@ -1,4 +1,5 @@
-import { Button } from './Button';
+import { Button } from './Button/Button';
+import { Typography } from './Typography/Typography';
 
-export { Button };
+export { Button, Typography };
 

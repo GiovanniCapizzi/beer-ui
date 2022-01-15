@@ -16,6 +16,11 @@ export default function HomePage({ navigation }) {
         title="Second Page"
         onPress={() => navigation.navigate('SecondPage')}
       />
+      <Text />
+      <Button
+        title="Typography"
+        onPress={() => navigation.navigate('Typography')}
+      />
     </View>
   );
 }
