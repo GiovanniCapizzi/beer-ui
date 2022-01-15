@@ -1,21 +1,25 @@
 import * as React from 'react';
-import { StyleSheet, View } from 'react-native';
-import { Button } from 'beer-ui';
+import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import FirstPage from './pages/FirstPage';
+import SecondPage from './pages/SecondPage';
+import HomePage from './pages/HomePage';
 
+const Stack = createNativeStackNavigator();
 
-export default function App() {
+function App() {
 
   return (
-    <View style={styles.container}>
-      <Button />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="BeerUI" component={HomePage} />
+        <Stack.Screen name="FirstPage" component={FirstPage} />
+        <Stack.Screen name="SecondPage" component={SecondPage} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
+
