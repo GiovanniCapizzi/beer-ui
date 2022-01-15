@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 import styled from 'styled-components';
 
 const ButtonStyle = styled(View)`
@@ -9,12 +9,17 @@ const ButtonStyle = styled(View)`
   border-radius: 16px;
 `;
 
-export const Button = () => {
+export interface ButtonProps {
+  title: string;
+  onPress: () => any;
+}
+
+export const Button: React.FC<ButtonProps> = ({ title, onPress }) => {
   return (
-    <ButtonStyle>
-      <Text style={{color: 'white', fontWeight: 'bold'}}>Button</Text>
-    </ButtonStyle>
+    <TouchableOpacity onPress={onPress}>
+      <ButtonStyle>
+        <Text style={{ color: 'white', fontWeight: 'bold' }}>{title}</Text>
+      </ButtonStyle>
+    </TouchableOpacity>
   );
 };
-
-
