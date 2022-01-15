@@ -16,21 +16,26 @@ export default function TypographyPage() {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scroll}>
+        <TextDemo bg="white" size="large" variant="accentDark" />
+        <TextDemo bg="white" size="medium" variant="accentDark" />
+        <TextDemo bg="white" size="small" variant="accentDark" />
+        <Typography variant="accentDark" text="Default Text" />
+        <Text />
         <TextDemo bg="white" size="large" variant="accent" />
         <TextDemo bg="white" size="medium" variant="accent" />
         <TextDemo bg="white" size="small" variant="accent" />
         <Typography variant="accent" text="Default Text" />
         <Text />
-        <TextDemo bg="white" size="large" variant="primary" />
-        <TextDemo bg="white" size="medium" variant="primary" />
-        <TextDemo bg="white" size="small" variant="primary" />
-        <Typography variant="primary" text="Default Text" />
+        <TextDemo bg="white" size="large" variant="secondary" />
+        <TextDemo bg="white" size="medium" variant="secondary" />
+        <TextDemo bg="white" size="small" variant="secondary" />
+        <Typography variant="secondary" text="Default Text" />
         <Text />
-        <TextDemo bg="black" size="large" variant="secondary" />
-        <TextDemo bg="black" size="medium" variant="secondary" />
-        <TextDemo bg="black" size="small" variant="secondary" />
+        <TextDemo bg="black" size="large" variant="primary" />
+        <TextDemo bg="black" size="medium" variant="primary" />
+        <TextDemo bg="black" size="small" variant="primary" />
         <View style={{ backgroundColor: 'black' }}>
-          <Typography text="Default Text" variant="secondary" />
+          <Typography text="Default Text" variant="primary" />
         </View>
         <Text />
       </ScrollView>
@@ -44,7 +49,7 @@ const TextDemo = ({
   bg,
 }: {
   size: 'small' | 'medium' | 'large';
-  variant: 'primary' | 'secondary' | 'accent';
+  variant: 'primary' | 'secondary' | 'accent' | 'accentDark';
   bg: 'black' | 'white';
 }) => {
   const title = size.charAt(0).toUpperCase() + size.slice(1);

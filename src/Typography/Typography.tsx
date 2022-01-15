@@ -7,7 +7,7 @@ export interface TypographyProps {
   text: string;
   onPress?: () => any;
   textStyle?: StyleProp<TextStyle>;
-  variant: 'primary' | 'secondary' | 'accent';
+  variant: 'primary' | 'secondary' | 'accent' | 'accentDark';
   size?: 'small' | 'medium' | 'large';
 }
 
