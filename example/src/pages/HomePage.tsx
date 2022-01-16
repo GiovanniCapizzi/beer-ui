@@ -8,6 +8,12 @@ export default function HomePage({ navigation }) {
       <Text>This is the home demo page</Text>
       <Text />
       <Button
+        title="Images"
+        onPress={() => navigation.navigate('Images')}
+        variant="primary"
+      />
+      <Text />
+      <Button
         title="Buttons"
         onPress={() => navigation.navigate('Buttons')}
         variant="primary"
