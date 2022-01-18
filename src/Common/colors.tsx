@@ -31,3 +31,7 @@ export const cardImageColors = {
   secondary: colors.accent.base,
   text: colors.white,
 }
+
+export const boxImageColors = {
+  text: colors.white,
+}

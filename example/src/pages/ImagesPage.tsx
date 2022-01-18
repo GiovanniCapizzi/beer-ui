@@ -22,7 +22,6 @@ export default function ImagesPage() {
         contentContainerStyle={{ alignItems: 'flex-start' }}
       >
         <BoxImage
-          variant="primary"
           title="Micro"
           shadow
           onPress={() => {}}
