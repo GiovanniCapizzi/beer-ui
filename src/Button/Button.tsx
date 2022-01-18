@@ -7,11 +7,11 @@ import styled from 'styled-components';
 import { buttonColors } from '../Common/colors';
 import { Typography } from 'beer-ui';
 
-interface ITouchableOpacityStyle {
+export interface ButtonProps extends NativeButtonProps {
   variant: 'primary' | 'secondary';
 }
 
-export interface ButtonProps extends NativeButtonProps {
+interface ITouchableOpacityStyle {
   variant: 'primary' | 'secondary';
 }
 
@@ -26,14 +26,13 @@ const TouchableOpacityStyle = styled(TouchableOpacity)<ITouchableOpacityStyle>`
   align-items: center;
 `;
 
-export const Button: React.FC<ButtonProps> = ({ variant, title, ...props }) => {
 
-  return (
-    <TouchableOpacityStyle variant={variant} activeOpacity={0.6} {...props}>
-      <Typography
-        text={title}
-        textStyle={{ fontWeight: 'bold', color: buttonColors[variant].text }}
-      />
-    </TouchableOpacityStyle>
-  );
-};
+export const Button: React.FC<ButtonProps> = ({ variant, title, ...props }) => (
+  <TouchableOpacityStyle variant={variant} activeOpacity={0.6} {...props}>
+    <Typography
+      text={title}
+      textStyle={{ fontWeight: 'bold', color: buttonColors[variant].text }}
+    />
+  </TouchableOpacityStyle>
+);
+
