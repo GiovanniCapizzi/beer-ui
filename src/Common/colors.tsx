@@ -25,3 +25,9 @@ export const textColors = {
   primary: colors.accent.base,
   secondary: colors.black,
 };
+
+export const cardImageColors = {
+  primary: colors.accent.light,
+  secondary: colors.accent.base,
+  text: colors.white,
+}

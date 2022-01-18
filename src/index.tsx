@@ -1,6 +1,7 @@
 import { Button } from './Button/Button';
 import { Typography } from './Typography/Typography';
-import { TouchableImage } from './TouchableImage/TouchableImage';
+import { CardImage } from './Image/CardImage';
+import { BoxImage } from './Image/BoxImage';
 
-export { Button, Typography, TouchableImage };
+export { Button, Typography, CardImage, BoxImage };
 
