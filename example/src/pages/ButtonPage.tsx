@@ -1,6 +1,12 @@
 import * as React from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { Button } from 'beer-ui';
+import { Button, RoundButton } from 'beer-ui';
+import {
+  faCheckSquare,
+  faFileCode,
+  faPlus,
+  faShare,
+} from '@fortawesome/free-solid-svg-icons';
 
 const styles = StyleSheet.create({
   container: {
@@ -29,11 +35,66 @@ export default function ButtonPage() {
           <Button title="Small Button" onPress={() => {}} variant="primary" />
         </View>
         <Text />
-        <Button title="Secondary Button" onPress={() => {}} variant="secondary" />
+        <Button
+          title="Secondary Button"
+          onPress={() => {}}
+          variant="secondary"
+        />
         <Text />
         <View style={{ alignItems: 'flex-start' }}>
           <Button title="Small Button" onPress={() => {}} variant="secondary" />
         </View>
+        <Text />
+        <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
+          <RoundButton
+            onPress={() => {}}
+            shadow
+            style={{ marginRight: 12 }}
+            variant="primary"
+            size={74}
+            icon={faShare}
+            title='Share'
+          />
+          <RoundButton
+            onPress={() => {}}
+            variant="primary"
+            size={64}
+            icon={faPlus}
+          />
+          <RoundButton
+            onPress={() => {}}
+            style={{ marginLeft: 12 }}
+            variant="primary"
+            size={44}
+            icon={faCheckSquare}
+          />
+        </View>
+        <Text />
+        <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
+          <RoundButton
+            onPress={() => {}}
+            variant="secondary"
+            shadow
+            style={{ marginRight: 12 }}
+            size={74}
+            icon={faFileCode}
+            title='Create'
+          />
+          <RoundButton
+            onPress={() => {}}
+            variant="secondary"
+            size={64}
+            icon={faPlus}
+          />
+          <RoundButton
+            onPress={() => {}}
+            style={{ marginLeft: 12 }}
+            variant="secondary"
+            size={44}
+            icon={faCheckSquare}
+          />
+        </View>
+        <Text />
       </ScrollView>
     </SafeAreaView>
   );
