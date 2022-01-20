@@ -10,6 +10,7 @@ import {
 import styled from 'styled-components';
 import { Typography } from 'beer-ui';
 import { cardImageColors } from '../Common/colors';
+import { shadowStyle } from '../Common/styles';
 
 export interface CardImageProps {
   source: ImageSourcePropType;
@@ -50,18 +51,6 @@ const Title = styled(View)<TitleProps>`
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 `;
-
-const shadowStyle = {
-  shadowColor: '#000',
-  shadowOffset: {
-    width: 0,
-    height: 2,
-  },
-  shadowOpacity: 0.25,
-  shadowRadius: 3.84,
-
-  elevation: 5,
-};
 
 export const CardImage: React.FC<CardImageProps> = ({
   source,

@@ -8,6 +8,7 @@ import {
 import styled from 'styled-components';
 import { Typography } from 'beer-ui';
 import { boxImageColors } from '../Common/colors';
+import { shadowStyle } from '../Common/styles';
 
 export interface BoxImageProps {
   source: ImageSourcePropType;
@@ -26,18 +27,6 @@ const Title = styled(View)`
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 `;
-
-const shadowStyle = {
-  shadowColor: '#000',
-  shadowOffset: {
-    width: 0,
-    height: 2,
-  },
-  shadowOpacity: 0.25,
-  shadowRadius: 3.84,
-
-  elevation: 5,
-};
 
 export const BoxImage: React.FC<BoxImageProps> = ({
   source,

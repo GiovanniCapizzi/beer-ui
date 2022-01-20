@@ -21,6 +21,21 @@ export const buttonColors = {
   }
 };
 
+export const roundButtonColors = {
+  primary: {
+    icon: colors.accent.base,
+    background: colors.white,
+    border: colors.accent.base,
+    text: colors.accent.base,
+  },
+  secondary: {
+    icon: colors.white,
+    background: colors.accent.base,
+    border: colors.accent.base,
+    text: colors.white,
+  }
+};
+
 export const textColors = {
   primary: colors.accent.base,
   secondary: colors.black,
