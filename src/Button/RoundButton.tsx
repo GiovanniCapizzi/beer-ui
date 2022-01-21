@@ -7,7 +7,7 @@ import type { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { lightShadowStyle } from '../Common/styles';
 import { Typography } from 'beer-ui';
 
-export interface ButtonProps {
+export interface RoundButtonProps {
   title?: string;
   variant: 'primary' | 'secondary';
   size: number;
@@ -34,7 +34,7 @@ const TouchableOpacityStyle = styled(TouchableOpacity)<ITouchableOpacityStyle>`
   align-items: center;
 `;
 
-export const RoundButton: React.FC<ButtonProps> = ({
+export const RoundButton: React.FC<RoundButtonProps> = ({
   variant,
   size,
   icon,
