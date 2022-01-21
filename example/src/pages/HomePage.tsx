@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Button } from 'beer-ui';
+import MiscPage from './MiscPage';
 
 const styles = StyleSheet.create({
   container: {
@@ -30,6 +31,12 @@ export default function HomePage({ navigation }) {
       <Button
         title="Typography"
         onPress={() => navigation.navigate('Typography')}
+        variant="primary"
+      />
+      <Text />
+      <Button
+        title="Misc"
+        onPress={() => navigation.navigate('Misc')}
         variant="primary"
       />
     </View>

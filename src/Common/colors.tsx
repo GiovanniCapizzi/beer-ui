@@ -50,3 +50,9 @@ export const cardImageColors = {
 export const boxImageColors = {
   text: colors.white,
 };
+
+export const chipColors = {
+  text: colors.white,
+  background: colors.accent.base,
+  foreground: colors.accent.light,
+};
