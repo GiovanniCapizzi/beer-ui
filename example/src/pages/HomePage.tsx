@@ -2,6 +2,14 @@ import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Button } from 'beer-ui';
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
+
 export default function HomePage({ navigation }) {
   return (
     <View style={styles.container}>
@@ -27,11 +35,3 @@ export default function HomePage({ navigation }) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

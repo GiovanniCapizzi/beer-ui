@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { TouchableOpacity } from 'react-native';
+import { StyleSheet, TouchableOpacity } from 'react-native';
 import styled from 'styled-components';
 import { roundButtonColors } from '../Common/colors';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
@@ -34,6 +34,14 @@ const TouchableOpacityStyle = styled(TouchableOpacity)<ITouchableOpacityStyle>`
   align-items: center;
 `;
 
+const styles = StyleSheet.create({
+  textStyle: {
+    fontWeight: 'bold',
+    fontSize: 12,
+    marginTop: 4,
+  },
+});
+
 export const RoundButton: React.FC<RoundButtonProps> = ({
   variant,
   size,
@@ -58,12 +66,10 @@ export const RoundButton: React.FC<RoundButtonProps> = ({
     {title && (
       <Typography
         text={title}
-        textStyle={{
-          fontWeight: 'bold',
-          color: roundButtonColors[variant].text,
-          fontSize: 12,
-          marginTop: 4
-        }}
+        textStyle={[
+          styles.textStyle,
+          { color: roundButtonColors[variant].text },
+        ]}
       />
     )}
   </TouchableOpacityStyle>

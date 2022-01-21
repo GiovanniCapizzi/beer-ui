@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, Text } from 'react-native';
-import { CardImage, BoxImage } from 'beer-ui';
+import { BoxImage, CardImage } from 'beer-ui';
 
 const dish = require('../res/budae-jigae.png');
 
@@ -12,6 +12,9 @@ const styles = StyleSheet.create({
   scroll: {
     padding: 24,
   },
+  flexStart: {
+    alignItems: 'flex-start',
+  },
 });
 
 export default function ImagesPage() {
@@ -19,7 +22,7 @@ export default function ImagesPage() {
     <SafeAreaView style={styles.container}>
       <ScrollView
         style={styles.scroll}
-        contentContainerStyle={{ alignItems: 'flex-start' }}
+        contentContainerStyle={styles.flexStart}
       >
         <BoxImage
           title="Micro"

@@ -9,7 +9,6 @@ import ImagesPage from './pages/ImagesPage';
 const Stack = createNativeStackNavigator();
 
 function App() {
-
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -23,4 +22,3 @@ function App() {
 }
 
 export default App;
-

@@ -10,6 +10,12 @@ const styles = StyleSheet.create({
   scroll: {
     padding: 24,
   },
+  textBold: {
+    fontWeight: 'bold',
+  },
+  textLight: {
+    fontWeight: '300',
+  },
 });
 
 export default function TypographyPage() {
@@ -45,14 +51,14 @@ const TextDemo = ({
         variant={variant}
         text={`${title} Text`}
         size={size}
-        textStyle={{ fontWeight: 'bold' }}
+        textStyle={styles.textBold}
       />
       <Typography variant={variant} text={`${title} Text`} size={size} />
       <Typography
         variant={variant}
         text={`${title} Text`}
         size={size}
-        textStyle={{ fontWeight: '300' }}
+        textStyle={styles.textLight}
       />
       <Text />
     </View>

@@ -18,7 +18,7 @@ export const buttonColors = {
     text: colors.accent.light,
     background: colors.white,
     border: colors.accent.light,
-  }
+  },
 };
 
 export const roundButtonColors = {
@@ -33,7 +33,7 @@ export const roundButtonColors = {
     background: colors.accent.base,
     border: colors.accent.base,
     text: colors.white,
-  }
+  },
 };
 
 export const textColors = {
@@ -45,8 +45,8 @@ export const cardImageColors = {
   primary: colors.accent.light,
   secondary: colors.accent.base,
   text: colors.white,
-}
+};
 
 export const boxImageColors = {
   text: colors.white,
-}
+};

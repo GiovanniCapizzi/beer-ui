@@ -2,6 +2,7 @@ import * as React from 'react';
 import {
   ImageBackground,
   ImageSourcePropType,
+  StyleSheet,
   TouchableOpacity,
   View,
 } from 'react-native';
@@ -28,6 +29,19 @@ const Title = styled(View)`
   border-bottom-right-radius: 8px;
 `;
 
+const styles = StyleSheet.create({
+  textStyle: {
+    fontWeight: 'bold',
+    color: boxImageColors.text,
+  },
+  round: {
+    borderRadius: 8,
+  },
+  center: {
+    justifyContent: 'flex-end',
+  },
+});
+
 export const BoxImage: React.FC<BoxImageProps> = ({
   source,
   title,
@@ -36,22 +50,14 @@ export const BoxImage: React.FC<BoxImageProps> = ({
   width,
   shadow,
 }) => {
-  const titleContent = (
-    <Typography
-      text={title}
-      textStyle={{ fontWeight: 'bold', color: boxImageColors.text }}
-    />
-  );
+  const titleContent = <Typography text={title} textStyle={styles.textStyle} />;
 
   return (
-    <TouchableOpacity
-      onPress={onPress}
-      style={shadow && shadowStyle}
-    >
+    <TouchableOpacity onPress={onPress} style={shadow && shadowStyle}>
       <ImageBackground
         source={source}
-        style={{ width, height, justifyContent: 'flex-end' }}
-        imageStyle={{ borderRadius: 8 }}
+        style={[{ width, height }, styles.center]}
+        imageStyle={styles.round}
       >
         <Title>{titleContent}</Title>
       </ImageBackground>

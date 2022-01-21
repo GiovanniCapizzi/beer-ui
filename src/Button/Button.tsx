@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {
   ButtonProps as NativeButtonProps,
+  StyleSheet,
   TouchableOpacity,
-  View,
 } from 'react-native';
 import styled from 'styled-components';
 import { buttonColors } from '../Common/colors';
@@ -33,6 +33,17 @@ const TouchableOpacityStyle = styled(TouchableOpacity)<ITouchableOpacityStyle>`
   flex-direction: row;
 `;
 
+const styles = StyleSheet.create({
+  spaceRight: {
+    marginRight: 12,
+  },
+  spaceLeft: {
+    marginLeft: 12,
+  },
+  bold: {
+    fontWeight: 'bold',
+  },
+});
 
 export const Button: React.FC<ButtonProps> = ({
   variant,
@@ -41,16 +52,12 @@ export const Button: React.FC<ButtonProps> = ({
   iconDirection = 'right',
   ...props
 }) => {
-  const fontIcon = icon ? (
+  const fontIcon = icon && (
     <FontAwesomeIcon
       icon={icon}
       color={buttonColors[variant].text}
-      style={
-        iconDirection === 'right' ? { marginLeft: 12 } : { marginRight: 12 }
-      }
+      style={iconDirection === 'right' ? styles.spaceLeft : styles.spaceRight}
     />
-  ) : (
-    <View />
   );
 
   return (
@@ -58,10 +65,9 @@ export const Button: React.FC<ButtonProps> = ({
       {icon && iconDirection === 'left' && fontIcon}
       <Typography
         text={title}
-        textStyle={{ fontWeight: 'bold', color: buttonColors[variant].text }}
+        textStyle={[styles.bold, { color: buttonColors[variant].text }]}
       />
       {icon && iconDirection === 'right' && fontIcon}
     </TouchableOpacityStyle>
   );
 };
-

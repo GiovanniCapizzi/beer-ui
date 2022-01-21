@@ -2,6 +2,7 @@ import * as React from 'react';
 import {
   Image,
   ImageSourcePropType,
+  StyleSheet,
   TouchableOpacity,
   TouchableOpacityProps,
   View,
@@ -52,6 +53,13 @@ const Title = styled(View)<TitleProps>`
   border-bottom-right-radius: 8px;
 `;
 
+const styles = StyleSheet.create({
+  textStyle: {
+    fontWeight: 'bold',
+    color: cardImageColors.text,
+  },
+});
+
 export const CardImage: React.FC<CardImageProps> = ({
   source,
   title,
@@ -64,12 +72,7 @@ export const CardImage: React.FC<CardImageProps> = ({
 }) => {
   const color = cardImageColors[variant];
 
-  const titleContent = (
-    <Typography
-      text={title}
-      textStyle={{ fontWeight: 'bold', color: cardImageColors.text }}
-    />
-  );
+  const titleContent = <Typography text={title} textStyle={styles.textStyle} />;
 
   return (
     <Container

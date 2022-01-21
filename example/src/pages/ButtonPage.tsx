@@ -18,6 +18,20 @@ const styles = StyleSheet.create({
   scroll: {
     padding: 24,
   },
+  rowStart: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+  },
+  rowEnd: {
+    flexDirection: 'row',
+    alignItems: 'flex-end',
+  },
+  spaceLeft: {
+    marginLeft: 12,
+  },
+  spaceRight: {
+    marginRight: 12,
+  },
 });
 
 export default function ButtonPage() {
@@ -33,7 +47,7 @@ export default function ButtonPage() {
           variant="primary"
         />
         <Text />
-        <View style={{ alignItems: 'flex-start', flexDirection: 'row' }}>
+        <View style={styles.rowStart}>
           <Button
             title="Small Button"
             onPress={() => {}}
@@ -48,7 +62,7 @@ export default function ButtonPage() {
           variant="secondary"
         />
         <Text />
-        <View style={{ alignItems: 'flex-start', flexDirection: 'row' }}>
+        <View style={styles.rowStart}>
           <Button
             title="Small Button"
             onPress={() => {}}
@@ -58,11 +72,11 @@ export default function ButtonPage() {
           />
         </View>
         <Text />
-        <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
+        <View style={styles.rowEnd}>
           <RoundButton
             onPress={() => {}}
             shadow
-            style={{ marginRight: 12 }}
+            style={styles.spaceRight}
             variant="primary"
             size={74}
             icon={faShare}
@@ -76,19 +90,19 @@ export default function ButtonPage() {
           />
           <RoundButton
             onPress={() => {}}
-            style={{ marginLeft: 12 }}
+            style={styles.spaceLeft}
             variant="primary"
             size={44}
             icon={faCheckSquare}
           />
         </View>
         <Text />
-        <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
+        <View style={styles.rowEnd}>
           <RoundButton
             onPress={() => {}}
             variant="secondary"
             shadow
-            style={{ marginRight: 12 }}
+            style={styles.spaceRight}
             size={74}
             icon={faFileCode}
             title="Create"
@@ -101,7 +115,7 @@ export default function ButtonPage() {
           />
           <RoundButton
             onPress={() => {}}
-            style={{ marginLeft: 12 }}
+            style={styles.spaceLeft}
             variant="secondary"
             size={44}
             icon={faCheckSquare}
