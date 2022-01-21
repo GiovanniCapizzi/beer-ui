@@ -2,6 +2,8 @@ import * as React from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Button, RoundButton } from 'beer-ui';
 import {
+  faArrowLeft,
+  faArrowRight,
   faCheckSquare,
   faFileCode,
   faPlus,
@@ -31,8 +33,13 @@ export default function ButtonPage() {
           variant="primary"
         />
         <Text />
-        <View style={{ alignItems: 'flex-start' }}>
-          <Button title="Small Button" onPress={() => {}} variant="primary" />
+        <View style={{ alignItems: 'flex-start', flexDirection: 'row' }}>
+          <Button
+            title="Small Button"
+            onPress={() => {}}
+            variant="primary"
+            icon={faArrowRight}
+          />
         </View>
         <Text />
         <Button
@@ -41,8 +48,14 @@ export default function ButtonPage() {
           variant="secondary"
         />
         <Text />
-        <View style={{ alignItems: 'flex-start' }}>
-          <Button title="Small Button" onPress={() => {}} variant="secondary" />
+        <View style={{ alignItems: 'flex-start', flexDirection: 'row' }}>
+          <Button
+            title="Small Button"
+            onPress={() => {}}
+            variant="secondary"
+            icon={faArrowLeft}
+            iconDirection="left"
+          />
         </View>
         <Text />
         <View style={{ flexDirection: 'row', alignItems: 'flex-end' }}>
@@ -53,7 +66,7 @@ export default function ButtonPage() {
             variant="primary"
             size={74}
             icon={faShare}
-            title='Share'
+            title="Share"
           />
           <RoundButton
             onPress={() => {}}
@@ -78,7 +91,7 @@ export default function ButtonPage() {
             style={{ marginRight: 12 }}
             size={74}
             icon={faFileCode}
-            title='Create'
+            title="Create"
           />
           <RoundButton
             onPress={() => {}}
