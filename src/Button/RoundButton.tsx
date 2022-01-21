@@ -14,6 +14,7 @@ export interface ButtonProps {
   icon: IconProp;
   shadow?: boolean;
   style?: object;
+  onPress: () => any;
 }
 
 interface ITouchableOpacityStyle {
