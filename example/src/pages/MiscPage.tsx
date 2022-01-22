@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useMemo, useState } from 'react';
-import { Chip } from 'beer-ui';
+import { Chip, Line, Typography } from 'beer-ui';
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -42,6 +42,8 @@ export default function MiscPage() {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scroll}>
+        <Typography variant="primary" text="Tags" size="medium" />
+        <Line variant="primary" style={styles.spaceY} />
         <View style={styles.flexStart}>{tagsItems}</View>
         <Text />
       </ScrollView>
