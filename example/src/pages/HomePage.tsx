@@ -1,43 +1,65 @@
 import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Button } from 'beer-ui';
-import MiscPage from './MiscPage';
+import {
+  faImage,
+  faImages,
+  faSquare,
+  faTags,
+  faTextHeight,
+} from '@fortawesome/free-solid-svg-icons';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
+    padding: 24,
+  },
+  center: {
     justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 
 export default function HomePage({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text>This is the home demo page</Text>
+      <View style={styles.center}>
+        <Text>This is the home demo page</Text>
+      </View>
       <Text />
       <Button
         title="Images"
         onPress={() => navigation.navigate('Images')}
         variant="primary"
+        icon={faImages}
       />
       <Text />
       <Button
         title="Buttons"
         onPress={() => navigation.navigate('Buttons')}
         variant="primary"
+        icon={faSquare}
       />
       <Text />
       <Button
         title="Typography"
         onPress={() => navigation.navigate('Typography')}
         variant="primary"
+        icon={faTextHeight}
       />
       <Text />
       <Button
-        title="Misc"
-        onPress={() => navigation.navigate('Misc')}
+        title="Tags"
+        onPress={() => navigation.navigate('Tags')}
         variant="primary"
+        icon={faTags}
+      />
+      <Text />
+      <Button
+        title="Carousel"
+        onPress={() => navigation.navigate('Carousel')}
+        variant="primary"
+        icon={faImage}
       />
     </View>
   );

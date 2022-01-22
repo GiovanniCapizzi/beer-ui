@@ -69,6 +69,7 @@ export const CardImage: React.FC<CardImageProps> = ({
   variant,
   shadow,
   bordered,
+  ...props
 }) => {
   const color = cardImageColors[variant];
 
@@ -80,6 +81,7 @@ export const CardImage: React.FC<CardImageProps> = ({
       bordered={bordered}
       color={color}
       style={shadow && shadowStyle}
+      {...props}
     >
       <Picture source={source} style={{ width, height }} />
       <Title color={color}>{titleContent}</Title>
