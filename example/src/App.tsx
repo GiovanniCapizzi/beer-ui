@@ -7,6 +7,7 @@ import TypographyPage from './pages/TypographyPage';
 import ImagesPage from './pages/ImagesPage';
 import TagsPage from './pages/TagsPage';
 import CarouselPage from './pages/CarouselPage';
+import HeaderPage from './pages/HeaderPage';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,6 +16,7 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="BeerUI" component={HomePage} />
+        <Stack.Screen name="Headers" component={HeaderPage} />
         <Stack.Screen name="Images" component={ImagesPage} />
         <Stack.Screen name="Buttons" component={ButtonPage} />
         <Stack.Screen name="Typography" component={TypographyPage} />

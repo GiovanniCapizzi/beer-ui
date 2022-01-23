@@ -56,3 +56,9 @@ export const chipColors = {
   background: colors.accent.base,
   foreground: colors.accent.light,
 };
+
+export const headerColors = {
+  firstLayer: colors.accent.light,
+  secondLayer: colors.accent.base,
+  thirdLayer: colors.accent.dark,
+};

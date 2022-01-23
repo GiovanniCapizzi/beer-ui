@@ -2,6 +2,7 @@ import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Button } from 'beer-ui';
 import {
+  faHeading,
   faImage,
   faImages,
   faSquare,
@@ -26,6 +27,13 @@ export default function HomePage({ navigation }) {
       <View style={styles.center}>
         <Text>This is the home demo page</Text>
       </View>
+      <Text />
+      <Button
+        title="Headers"
+        onPress={() => navigation.navigate('Headers')}
+        variant="primary"
+        icon={faHeading}
+      />
       <Text />
       <Button
         title="Images"

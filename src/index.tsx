@@ -6,6 +6,7 @@ import { CardCarousel } from './Image/CardCarousel';
 import { CardImage } from './Image/CardImage';
 import { BoxImage } from './Image/BoxImage';
 import { Chip } from './Chip/Chip';
+import { Header } from './Headers/Header';
 
 export {
   Chip,
@@ -16,4 +17,5 @@ export {
   RoundButton,
   Line,
   CardCarousel,
+  Header,
 };
