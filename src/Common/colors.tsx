@@ -67,4 +67,5 @@ export const buildTheme = (colors: ColorsProps) => ({
       text: colors.white,
     },
   },
+  colors,
 });
