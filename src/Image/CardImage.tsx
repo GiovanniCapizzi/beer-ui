@@ -10,8 +10,8 @@ import {
 } from 'react-native';
 import styled from 'styled-components';
 import { Typography } from 'beer-ui';
-import { cardImageColors } from '../Common/colors';
 import { shadowStyle } from '../Common/styles';
+import { useTheme } from '../Theme/ThemeProvider';
 
 export interface CardImageProps {
   source: ImageSourcePropType;
@@ -56,7 +56,6 @@ const Title = styled(View)<TitleProps>`
 const styles = StyleSheet.create({
   textStyle: {
     fontWeight: 'bold',
-    color: cardImageColors.text,
   },
 });
 
@@ -71,20 +70,25 @@ export const CardImage: React.FC<CardImageProps> = ({
   bordered,
   ...props
 }) => {
-  const color = cardImageColors[variant];
+  const { cardImage: palette } = useTheme();
 
-  const titleContent = <Typography text={title} textStyle={styles.textStyle} />;
+  const titleContent = (
+    <Typography
+      text={title}
+      textStyle={[styles.textStyle, { color: palette.text }]}
+    />
+  );
 
   return (
     <Container
       onPress={onPress}
       bordered={bordered}
-      color={color}
+      color={palette[variant]}
       style={shadow && shadowStyle}
       {...props}
     >
       <Picture source={source} style={{ width, height }} />
-      <Title color={color}>{titleContent}</Title>
+      <Title color={palette[variant]}>{titleContent}</Title>
     </Container>
   );
 };

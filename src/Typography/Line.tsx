@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { View, ViewStyle } from 'react-native';
-import { textColors } from '../Common/colors';
 import styled from 'styled-components';
+import { useTheme } from '../Theme/ThemeProvider';
 
 export interface LineProps {
   variant: 'primary' | 'secondary';
@@ -18,6 +18,7 @@ const LineView = styled(View)<LineViewProps>`
 `;
 
 export const Line: React.FC<LineProps> = ({ variant, style }) => {
-  const background = textColors[variant];
+  const { text: palette } = useTheme();
+  const background = palette[variant];
   return <LineView background={background} style={style} />;
 };

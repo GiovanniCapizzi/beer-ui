@@ -8,8 +8,8 @@ import {
 } from 'react-native';
 import styled from 'styled-components';
 import { Typography } from 'beer-ui';
-import { boxImageColors } from '../Common/colors';
 import { shadowStyle } from '../Common/styles';
+import { useTheme } from '../Theme/ThemeProvider';
 
 export interface BoxImageProps {
   source: ImageSourcePropType;
@@ -32,7 +32,6 @@ const Title = styled(View)`
 const styles = StyleSheet.create({
   textStyle: {
     fontWeight: 'bold',
-    color: boxImageColors.text,
   },
   round: {
     borderRadius: 8,
@@ -50,7 +49,14 @@ export const BoxImage: React.FC<BoxImageProps> = ({
   width,
   shadow,
 }) => {
-  const titleContent = <Typography text={title} textStyle={styles.textStyle} />;
+  const { boxImage: palette } = useTheme();
+
+  const titleContent = (
+    <Typography
+      text={title}
+      textStyle={[styles.textStyle, { color: palette.text }]}
+    />
+  );
 
   return (
     <TouchableOpacity onPress={onPress} style={shadow && shadowStyle}>

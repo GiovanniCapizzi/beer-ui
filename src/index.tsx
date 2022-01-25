@@ -7,6 +7,7 @@ import { CardImage } from './Image/CardImage';
 import { BoxImage } from './Image/BoxImage';
 import { Chip } from './Chip/Chip';
 import { Header } from './Headers/Header';
+import { ThemeProvider } from './Theme/ThemeProvider';
 
 export {
   Chip,
@@ -18,4 +19,5 @@ export {
   Line,
   CardCarousel,
   Header,
+  ThemeProvider,
 };

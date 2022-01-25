@@ -8,22 +8,25 @@ import ImagesPage from './pages/ImagesPage';
 import TagsPage from './pages/TagsPage';
 import CarouselPage from './pages/CarouselPage';
 import HeaderPage from './pages/HeaderPage';
+import { ThemeProvider } from 'beer-ui';
 
 const Stack = createNativeStackNavigator();
 
 function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="BeerUI" component={HomePage} />
-        <Stack.Screen name="Headers" component={HeaderPage} />
-        <Stack.Screen name="Images" component={ImagesPage} />
-        <Stack.Screen name="Buttons" component={ButtonPage} />
-        <Stack.Screen name="Typography" component={TypographyPage} />
-        <Stack.Screen name="Tags" component={TagsPage} />
-        <Stack.Screen name="Carousel" component={CarouselPage} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <ThemeProvider>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="BeerUI" component={HomePage} />
+          <Stack.Screen name="Headers" component={HeaderPage} />
+          <Stack.Screen name="Images" component={ImagesPage} />
+          <Stack.Screen name="Buttons" component={ButtonPage} />
+          <Stack.Screen name="Typography" component={TypographyPage} />
+          <Stack.Screen name="Tags" component={TagsPage} />
+          <Stack.Screen name="Carousel" component={CarouselPage} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </ThemeProvider>
   );
 }
 

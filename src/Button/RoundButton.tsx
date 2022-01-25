@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import styled from 'styled-components';
-import { roundButtonColors } from '../Common/colors';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import type { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { lightShadowStyle } from '../Common/styles';
 import { Typography } from 'beer-ui';
+import { useTheme } from '../Theme/ThemeProvider';
 
 export interface RoundButtonProps {
   title?: string;
@@ -18,14 +18,15 @@ export interface RoundButtonProps {
 }
 
 interface ITouchableOpacityStyle {
-  variant: 'primary' | 'secondary';
   size: number;
+  backgroundColor: string;
+  borderColor: string;
 }
 
 const TouchableOpacityStyle = styled(TouchableOpacity)<ITouchableOpacityStyle>`
-  background: ${(p) => roundButtonColors[p.variant].background};
+  background: ${(p) => p.backgroundColor};
   opacity: ${(p) => (p.disabled ? 0.5 : 1)};
-  border: 1px solid ${(p) => roundButtonColors[p.variant].border};
+  border: 1px solid ${(p) => p.borderColor};
   font-weight: bold;
   width: ${(p) => p.size}px;
   height: ${(p) => p.size}px;
@@ -50,27 +51,29 @@ export const RoundButton: React.FC<RoundButtonProps> = ({
   style,
   title,
   ...props
-}) => (
-  <TouchableOpacityStyle
-    variant={variant}
-    activeOpacity={0.6}
-    size={size}
-    style={[style, shadow && lightShadowStyle]}
-    {...props}
-  >
-    <FontAwesomeIcon
-      icon={icon}
-      color={roundButtonColors[variant].icon}
-      size={title ? size / 3 : size / 2}
-    />
-    {title && (
-      <Typography
-        text={title}
-        textStyle={[
-          styles.textStyle,
-          { color: roundButtonColors[variant].text },
-        ]}
+}) => {
+  const { roundButton } = useTheme();
+  const palette = roundButton[variant];
+  return (
+    <TouchableOpacityStyle
+      backgroundColor={palette.background}
+      borderColor={palette.border}
+      activeOpacity={0.6}
+      size={size}
+      style={[style, shadow && lightShadowStyle]}
+      {...props}
+    >
+      <FontAwesomeIcon
+        icon={icon}
+        color={palette.icon}
+        size={title ? size / 3 : size / 2}
       />
-    )}
-  </TouchableOpacityStyle>
-);
+      {title && (
+        <Typography
+          text={title}
+          textStyle={[styles.textStyle, { color: palette.text }]}
+        />
+      )}
+    </TouchableOpacityStyle>
+  );
+};

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { StyleProp, Text, TextStyle, TouchableOpacity } from 'react-native';
-import { textColors } from '../Common/colors';
 import textSize from '../Common/sizes';
+import { useTheme } from '../Theme/ThemeProvider';
 
 export interface TypographyProps {
   text: string;
@@ -18,7 +18,8 @@ export const Typography: React.FC<TypographyProps> = ({
   size,
   textStyle,
 }) => {
-  const color = variant ? textColors[variant] : undefined;
+  const { text: palette } = useTheme();
+  const color = variant ? palette[variant] : undefined;
   const fontSize = size ? textSize[size] : undefined;
 
   const component = (

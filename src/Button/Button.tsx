@@ -5,10 +5,10 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import styled from 'styled-components';
-import { buttonColors } from '../Common/colors';
 import type { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { Typography } from 'beer-ui';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { useTheme } from '../Theme/ThemeProvider';
 
 export interface ButtonProps extends NativeButtonProps {
   variant: 'primary' | 'secondary';
@@ -18,13 +18,14 @@ export interface ButtonProps extends NativeButtonProps {
 }
 
 interface ITouchableOpacityStyle {
-  variant: 'primary' | 'secondary';
+  backgroundColor: string;
+  borderColor: string;
 }
 
 const TouchableOpacityStyle = styled(TouchableOpacity)<ITouchableOpacityStyle>`
-  background: ${(p) => buttonColors[p.variant].background};
+  background: ${(p) => p.backgroundColor};
   opacity: ${(p) => (p.disabled ? 0.5 : 1)};
-  border: 1px solid ${(p) => buttonColors[p.variant].border};
+  border: 1px solid ${(p) => p.borderColor};
   font-weight: bold;
   padding: 16px 24px;
   border-radius: 32px;
@@ -52,20 +53,28 @@ export const Button: React.FC<ButtonProps> = ({
   iconDirection = 'right',
   ...props
 }) => {
+  const { button } = useTheme();
+  const palette = button[variant];
+
   const fontIcon = icon && (
     <FontAwesomeIcon
       icon={icon}
-      color={buttonColors[variant].text}
+      color={palette.text}
       style={iconDirection === 'right' ? styles.spaceLeft : styles.spaceRight}
     />
   );
 
   return (
-    <TouchableOpacityStyle variant={variant} activeOpacity={0.6} {...props}>
+    <TouchableOpacityStyle
+      activeOpacity={0.6}
+      backgroundColor={palette.background}
+      borderColor={palette.border}
+      {...props}
+    >
       {icon && iconDirection === 'left' && fontIcon}
       <Typography
         text={title}
-        textStyle={[styles.bold, { color: buttonColors[variant].text }]}
+        textStyle={[styles.bold, { color: palette.text }]}
       />
       {icon && iconDirection === 'right' && fontIcon}
     </TouchableOpacityStyle>
