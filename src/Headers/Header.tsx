@@ -1,6 +1,11 @@
 import * as React from 'react';
 import Svg from 'react-native-svg';
-import { useWindowDimensions, View } from 'react-native';
+import {
+  Image,
+  ImageSourcePropType,
+  useWindowDimensions,
+  View,
+} from 'react-native';
 import {
   PrimaryBackwardHeader,
   PrimaryForwardHeader,
@@ -13,6 +18,10 @@ export interface HeaderProps {
   originalHeight?: number;
   variant: 'primary' | 'secondary';
   reverse?: boolean;
+  logo?: {
+    source: ImageSourcePropType;
+    imageStyle?: Record<string, string>;
+  };
 }
 
 const headerVariants = {
@@ -31,6 +40,7 @@ export const Header: React.FC<HeaderProps> = ({
   originalHeight = 192,
   reverse,
   variant,
+  logo,
 }) => {
   const HeaderComponent = reverse
     ? headerVariants[variant].forward
@@ -40,14 +50,17 @@ export const Header: React.FC<HeaderProps> = ({
   const { width } = useWindowDimensions();
 
   return (
-    <View style={{ width: width, aspectRatio }}>
-      <Svg
-        width="100%"
-        height="100%"
-        viewBox={`0 0 ${originalWidth} ${originalHeight}`}
-      >
-        <HeaderComponent />
-      </Svg>
+    <View>
+      {logo && <Image source={logo.source} style={logo.imageStyle} />}
+      <View style={{ width: width, aspectRatio }}>
+        <Svg
+          width="100%"
+          height="100%"
+          viewBox={`0 0 ${originalWidth} ${originalHeight}`}
+        >
+          <HeaderComponent />
+        </Svg>
+      </View>
     </View>
   );
 };

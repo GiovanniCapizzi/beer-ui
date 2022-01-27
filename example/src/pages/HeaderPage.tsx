@@ -2,6 +2,8 @@ import * as React from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { Header, Line, Typography } from 'beer-ui';
 
+const appLogo = require('../res/app-logo.png');
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -9,6 +11,15 @@ const styles = StyleSheet.create({
   },
   spaceY: {
     marginVertical: 12,
+  },
+  header: {
+    flex: 1,
+    width: 232,
+    height: 64,
+    top: 42,
+    zIndex: 1,
+    position: 'absolute',
+    resizeMode: 'contain',
   },
 });
 
@@ -23,7 +34,13 @@ export default function HeaderPage() {
           textStyle={styles.spaceY}
         />
         <Line variant="primary" />
-        <Header variant="primary"/>
+        <Header
+          variant="primary"
+          logo={{
+            source: appLogo,
+            imageStyle: styles.header,
+          }}
+        />
         <Typography
           variant="primary"
           text="Primary Header (reverse)"
@@ -31,7 +48,14 @@ export default function HeaderPage() {
           textStyle={styles.spaceY}
         />
         <Line variant="primary" />
-        <Header variant="primary" reverse />
+        <Header
+          variant="primary"
+          reverse
+          logo={{
+            source: appLogo,
+            imageStyle: [styles.header, { right: 0 }],
+          }}
+        />
         <Typography
           variant="primary"
           text="Secondary Header"
@@ -39,7 +63,13 @@ export default function HeaderPage() {
           textStyle={styles.spaceY}
         />
         <Line variant="primary" />
-        <Header variant="secondary" />
+        <Header
+          variant="secondary"
+          logo={{
+            source: appLogo,
+            imageStyle: styles.header,
+          }}
+        />
         <Typography
           variant="primary"
           text="Secondary Header (reverse)"
@@ -47,7 +77,14 @@ export default function HeaderPage() {
           textStyle={styles.spaceY}
         />
         <Line variant="primary" />
-        <Header variant="secondary" reverse />
+        <Header
+          variant="secondary"
+          reverse
+          logo={{
+            source: appLogo,
+            imageStyle: [styles.header, { right: 0 }],
+          }}
+        />
       </ScrollView>
     </View>
   );
