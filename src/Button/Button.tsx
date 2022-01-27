@@ -8,7 +8,7 @@ import styled from 'styled-components';
 import type { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { Typography } from 'beer-ui';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { useTheme } from '../Theme/ThemeProvider';
+import { useTheme } from 'beer-ui';
 
 export interface ButtonProps extends NativeButtonProps {
   variant: 'primary' | 'secondary';
