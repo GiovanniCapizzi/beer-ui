@@ -8,13 +8,19 @@ import ImagesPage from './pages/ImagesPage';
 import TagsPage from './pages/TagsPage';
 import CarouselPage from './pages/CarouselPage';
 import HeaderPage from './pages/HeaderPage';
-import { ThemeProvider } from 'beer-ui';
+import { ColorsProps, ThemeProvider } from 'beer-ui';
+import PalettePage from './pages/PalettePage';
+import { StoreProvider } from 'easy-peasy';
+import { store, useStoreState } from './redux/store';
 
 const Stack = createNativeStackNavigator();
 
-function App() {
+const Router = () => {
+  const customTheme: ColorsProps = useStoreState(
+    (state) => state.ui.customTheme
+  );
   return (
-    <ThemeProvider>
+    <ThemeProvider colors={customTheme}>
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="BeerUI" component={HomePage} />
@@ -24,9 +30,18 @@ function App() {
           <Stack.Screen name="Typography" component={TypographyPage} />
           <Stack.Screen name="Tags" component={TagsPage} />
           <Stack.Screen name="Carousel" component={CarouselPage} />
+          <Stack.Screen name="Palette" component={PalettePage} />
         </Stack.Navigator>
       </NavigationContainer>
     </ThemeProvider>
+  );
+};
+
+function App() {
+  return (
+    <StoreProvider store={store}>
+      <Router />
+    </StoreProvider>
   );
 }
 

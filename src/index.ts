@@ -8,6 +8,8 @@ import { BoxImage } from './Image/BoxImage';
 import { Chip } from './Chip/Chip';
 import { Header } from './Headers/Header';
 import { ThemeProvider, useTheme } from './Theme/ThemeProvider';
+import type { ColorsProps } from './Common/colors';
+import { defaultColors } from './Common/colors';
 
 export {
   Chip,
@@ -21,4 +23,6 @@ export {
   Header,
   ThemeProvider,
   useTheme,
+  ColorsProps,
+  defaultColors,
 };
