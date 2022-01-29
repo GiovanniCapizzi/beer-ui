@@ -58,6 +58,20 @@ export const buildTheme = (colors: ColorsProps) => ({
       border: colors.white,
     },
   },
+  bigButton: {
+    primary: {
+      text: colors.accent.base,
+      white: colors.white,
+      background: colors.white,
+      border: colors.accent.base,
+    },
+    secondary: {
+      text: colors.accent.light,
+      white: colors.white,
+      background: colors.white,
+      border: colors.accent.light,
+    },
+  },
   slimButton: {
     primary: {
       text: colors.white,

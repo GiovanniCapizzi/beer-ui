@@ -1,15 +1,19 @@
 import * as React from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { Button, defaultColors, RoundButton } from 'beer-ui';
+import { BigButton, Button, defaultColors, RoundButton } from 'beer-ui';
 import {
   faArrowLeft,
   faArrowRight,
   faCheckSquare,
+  faEgg,
   faEye,
   faFileCode,
+  faImage,
   faPlus,
   faShare,
 } from '@fortawesome/free-solid-svg-icons';
+
+const dish = require('../res/budae-jigae.png');
 
 const styles = StyleSheet.create({
   container: {
@@ -34,10 +38,10 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
   },
   spaceLeft: {
-    marginLeft: 12,
+    marginLeft: 24,
   },
   spaceRight: {
-    marginRight: 12,
+    marginRight: 24,
   },
 });
 
@@ -101,7 +105,7 @@ export default function ButtonPage() {
         <View style={[styles.rowStart, styles.backgroundPanel]}>
           <Button
             slim
-            title="Secondary slim button"
+            title="White slim button"
             onPress={() => {}}
             variant="white"
           />
@@ -156,6 +160,44 @@ export default function ButtonPage() {
             icon={faCheckSquare}
           />
         </View>
+        <Text />
+        <Text />
+        <View style={styles.rowStart}>
+          <BigButton
+            style={styles.spaceRight}
+            title="Big button"
+            onPress={() => {}}
+            icon={faEgg}
+            variant="secondary"
+            height={134}
+            width={114}
+          />
+          <BigButton
+            title="Big button"
+            onPress={() => {}}
+            icon={faEgg}
+            style={styles.spaceRight}
+            variant="primary"
+            height={134}
+            badgeNum={7}
+            width={114}
+          />
+        </View>
+        <Text />
+        <Text />
+        <View style={styles.rowStart}>
+          <BigButton
+            title="Cover"
+            backgroundImage={dish}
+            onPress={() => {}}
+            icon={faImage}
+            variant="primary"
+            badgeNum={7}
+            height={134}
+            width={114}
+          />
+        </View>
+        <Text />
         <Text />
       </ScrollView>
     </SafeAreaView>
