@@ -52,6 +52,28 @@ export const buildTheme = (colors: ColorsProps) => ({
       background: colors.white,
       border: colors.accent.light,
     },
+    white: {
+      text: colors.white,
+      background: 'transparent',
+      border: colors.white,
+    },
+  },
+  slimButton: {
+    primary: {
+      text: colors.white,
+      background: colors.accent.light,
+      border: colors.accent.light,
+    },
+    secondary: {
+      text: colors.accent.base,
+      background: colors.white,
+      border: colors.accent.base,
+    },
+    white: {
+      text: colors.white,
+      background: 'transparent',
+      border: colors.white,
+    },
   },
   roundButton: {
     primary: {

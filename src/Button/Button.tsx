@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useMemo } from 'react';
 import {
   ButtonProps as NativeButtonProps,
   StyleSheet,
@@ -6,20 +7,21 @@ import {
 } from 'react-native';
 import styled from 'styled-components';
 import type { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { Typography } from 'beer-ui';
+import { Typography, useTheme } from 'beer-ui';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { useTheme } from 'beer-ui';
 
 export interface ButtonProps extends NativeButtonProps {
-  variant: 'primary' | 'secondary';
+  variant: 'primary' | 'secondary' | 'white';
   icon?: IconProp;
   iconDirection?: 'left' | 'right';
   style?: object;
+  slim?: boolean;
 }
 
 interface ITouchableOpacityStyle {
   backgroundColor: string;
   borderColor: string;
+  slim?: boolean;
 }
 
 const TouchableOpacityStyle = styled(TouchableOpacity)<ITouchableOpacityStyle>`
@@ -27,7 +29,7 @@ const TouchableOpacityStyle = styled(TouchableOpacity)<ITouchableOpacityStyle>`
   opacity: ${(p) => (p.disabled ? 0.5 : 1)};
   border: 1px solid ${(p) => p.borderColor};
   font-weight: bold;
-  padding: 16px 24px;
+  padding: ${(p) => (p.slim ? 8 : 16)}px 24px;
   border-radius: 32px;
   justify-content: center;
   align-items: center;
@@ -36,10 +38,10 @@ const TouchableOpacityStyle = styled(TouchableOpacity)<ITouchableOpacityStyle>`
 
 const styles = StyleSheet.create({
   spaceRight: {
-    marginRight: 12,
+    marginRight: 8,
   },
   spaceLeft: {
-    marginLeft: 12,
+    marginLeft: 8,
   },
   bold: {
     fontWeight: 'bold',
@@ -51,10 +53,14 @@ export const Button: React.FC<ButtonProps> = ({
   title,
   icon,
   iconDirection = 'right',
+  slim,
   ...props
 }) => {
-  const { button } = useTheme();
-  const palette = button[variant];
+  const { button, slimButton } = useTheme();
+  const palette = useMemo(
+    () => (slim ? slimButton[variant] : button[variant]),
+    [button, slim, slimButton, variant]
+  );
 
   const fontIcon = icon && (
     <FontAwesomeIcon
@@ -69,6 +75,7 @@ export const Button: React.FC<ButtonProps> = ({
       activeOpacity={0.6}
       backgroundColor={palette.background}
       borderColor={palette.border}
+      slim={slim}
       {...props}
     >
       {icon && iconDirection === 'left' && fontIcon}

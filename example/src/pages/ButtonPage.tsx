@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { Button, RoundButton } from 'beer-ui';
+import { Button, defaultColors, RoundButton } from 'beer-ui';
 import {
   faArrowLeft,
   faArrowRight,
   faCheckSquare,
+  faEye,
   faFileCode,
   faPlus,
   faShare,
@@ -21,6 +22,12 @@ const styles = StyleSheet.create({
   rowStart: {
     flexDirection: 'row',
     alignItems: 'flex-start',
+  },
+  backgroundPanel: {
+    paddingVertical: 12,
+    paddingLeft: 12,
+    borderRadius: 4,
+    backgroundColor: defaultColors.accent.light,
   },
   rowEnd: {
     flexDirection: 'row',
@@ -69,6 +76,34 @@ export default function ButtonPage() {
             variant="secondary"
             icon={faArrowLeft}
             iconDirection="left"
+          />
+        </View>
+        <Text />
+        <View style={styles.rowStart}>
+          <Button
+            slim
+            title="Primary slim button"
+            onPress={() => {}}
+            variant="primary"
+            icon={faEye}
+          />
+        </View>
+        <Text />
+        <View style={styles.rowStart}>
+          <Button
+            slim
+            title="Secondary slim button"
+            onPress={() => {}}
+            variant="secondary"
+          />
+        </View>
+        <Text />
+        <View style={[styles.rowStart, styles.backgroundPanel]}>
+          <Button
+            slim
+            title="Secondary slim button"
+            onPress={() => {}}
+            variant="white"
           />
         </View>
         <Text />
