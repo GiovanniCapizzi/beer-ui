@@ -1,6 +1,8 @@
 import * as React from 'react';
+import { useMemo } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
-import { Header, Line, Typography } from 'beer-ui';
+import { Button, Header, Typography } from 'beer-ui';
+import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
 
 const appLogo = require('../res/app-logo.png');
 
@@ -11,6 +13,12 @@ const styles = StyleSheet.create({
   },
   spaceY: {
     marginVertical: 12,
+  },
+  action: {
+    top: 110,
+    left: 12,
+    zIndex: 1,
+    position: 'absolute',
   },
   header: {
     flex: 1,
@@ -24,6 +32,22 @@ const styles = StyleSheet.create({
 });
 
 export default function HeaderPage() {
+  const action = useMemo(
+    () => (
+      <View style={styles.action}>
+        <Button
+          slim
+          title="Login"
+          onPress={() => {}}
+          variant="white"
+          icon={faArrowAltCircleLeft}
+          iconDirection="left"
+        />
+      </View>
+    ),
+    []
+  );
+
   return (
     <View style={styles.container}>
       <ScrollView>
@@ -33,13 +57,13 @@ export default function HeaderPage() {
           size="medium"
           textStyle={styles.spaceY}
         />
-        <Line variant="primary" />
         <Header
           variant="primary"
           logo={{
             source: appLogo,
             imageStyle: styles.header,
           }}
+          component={action}
         />
         <Typography
           variant="primary"
@@ -47,7 +71,6 @@ export default function HeaderPage() {
           size="medium"
           textStyle={styles.spaceY}
         />
-        <Line variant="primary" />
         <Header
           variant="primary"
           reverse
@@ -62,7 +85,6 @@ export default function HeaderPage() {
           size="medium"
           textStyle={styles.spaceY}
         />
-        <Line variant="primary" />
         <Header
           variant="secondary"
           logo={{
@@ -76,7 +98,6 @@ export default function HeaderPage() {
           size="medium"
           textStyle={styles.spaceY}
         />
-        <Line variant="primary" />
         <Header
           variant="secondary"
           reverse

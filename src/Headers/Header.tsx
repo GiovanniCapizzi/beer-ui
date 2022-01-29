@@ -22,6 +22,7 @@ export interface HeaderProps {
     source: ImageSourcePropType;
     imageStyle?: Record<string, string>;
   };
+  component?: React.ReactElement;
 }
 
 const headerVariants = {
@@ -40,6 +41,7 @@ export const Header: React.FC<HeaderProps> = ({
   originalHeight = 192,
   reverse,
   variant,
+  component,
   logo,
 }) => {
   const HeaderComponent = reverse
@@ -52,6 +54,7 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <View>
       {logo && <Image source={logo.source} style={logo.imageStyle} />}
+      {component}
       <View style={{ width: width, aspectRatio }}>
         <Svg
           width="100%"
