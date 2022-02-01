@@ -6,6 +6,9 @@ export interface ColorsProps {
   };
   white: string;
   black: string;
+  background: {
+    light: string;
+  };
 }
 
 export const defaultColors: ColorsProps = {
@@ -16,6 +19,9 @@ export const defaultColors: ColorsProps = {
   },
   white: '#FFF',
   black: '#585858',
+  background: {
+    light: '#F8F8F8',
+  },
 };
 
 export const buildTheme = (colors: ColorsProps) => ({
@@ -101,6 +107,20 @@ export const buildTheme = (colors: ColorsProps) => ({
       background: colors.accent.base,
       border: colors.accent.base,
       text: colors.white,
+    },
+  },
+  cardItem: {
+    primary: {
+      text: colors.black,
+      selectedIcon: colors.white,
+      highlight: colors.accent.base,
+      background: colors.background.light,
+    },
+    secondary: {
+      text: colors.black,
+      selectedIcon: colors.white,
+      highlight: colors.accent.light,
+      background: colors.background.light,
     },
   },
   colors,

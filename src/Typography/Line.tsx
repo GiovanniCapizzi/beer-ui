@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { View, ViewStyle } from 'react-native';
 import styled from 'styled-components';
-import { useTheme } from '../Theme/ThemeProvider';
+import { useTheme } from 'beer-ui';
 
 export interface LineProps {
   variant: 'primary' | 'secondary';

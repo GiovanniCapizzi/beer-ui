@@ -12,6 +12,7 @@ import { ColorsProps, ThemeProvider } from 'beer-ui';
 import PalettePage from './pages/PalettePage';
 import { StoreProvider } from 'easy-peasy';
 import { store, useStoreState } from './redux/store';
+import MiscPage from './pages/MiscPage';
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +32,7 @@ const Router = () => {
           <Stack.Screen name="Tags" component={TagsPage} />
           <Stack.Screen name="Carousel" component={CarouselPage} />
           <Stack.Screen name="Palette" component={PalettePage} />
+          <Stack.Screen name="Misc" component={MiscPage} />
         </Stack.Navigator>
       </NavigationContainer>
     </ThemeProvider>

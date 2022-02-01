@@ -8,6 +8,7 @@ import {
   faImages,
   faPencilAlt,
   faSquare,
+  faStream,
   faTags,
   faTextHeight,
 } from '@fortawesome/free-solid-svg-icons';
@@ -30,6 +31,7 @@ const components = {
   Typography: faTextHeight,
   Tags: faTags,
   Carousel: faImage,
+  Misc: faStream,
 };
 
 const ComponentButtons = ({ navigation }) => {

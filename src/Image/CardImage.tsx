@@ -11,7 +11,7 @@ import {
 import styled from 'styled-components';
 import { Typography } from 'beer-ui';
 import { shadowStyle } from '../Common/styles';
-import { useTheme } from '../Theme/ThemeProvider';
+import { useTheme } from 'beer-ui';
 
 export interface CardImageProps {
   source: ImageSourcePropType;
