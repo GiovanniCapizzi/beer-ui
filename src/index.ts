@@ -11,6 +11,7 @@ import { Header } from './Headers/Header';
 import { BigButton } from './Button/BigButton';
 import { CardItem } from './List/CardItem';
 import { Units } from './Units/Units';
+import { Item } from './List/Item';
 import { CardCarousel } from './Image/CardCarousel';
 import { defaultColors } from './Common/colors';
 
@@ -28,6 +29,7 @@ export {
   CardItem,
   BigButton,
   Units,
+  Item,
   ColorsProps,
   defaultColors,
   CardCarousel,

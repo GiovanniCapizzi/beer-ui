@@ -1,3 +1,5 @@
+import { transparentize } from 'polished';
+
 export interface ColorsProps {
   accent: {
     light: string;
@@ -121,6 +123,18 @@ export const buildTheme = (colors: ColorsProps) => ({
       selectedIcon: colors.white,
       highlight: colors.accent.light,
       background: colors.background.light,
+    },
+  },
+  item: {
+    primary: {
+      text: colors.black,
+      border: transparentize(0.9, colors.black),
+      background: colors.background.light,
+    },
+    secondary: {
+      text: colors.black,
+      border: transparentize(0.8, colors.accent.base),
+      background: transparentize(0.8, colors.accent.base),
     },
   },
   colors,

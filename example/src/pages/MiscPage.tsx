@@ -6,7 +6,7 @@ import {
   faUsers,
   faUtensils,
 } from '@fortawesome/free-solid-svg-icons';
-import { CardItem, Units } from 'beer-ui';
+import { CardItem, Item, Units } from 'beer-ui';
 
 const styles = StyleSheet.create({
   container: {
@@ -82,6 +82,32 @@ export default function MiscPage() {
             onAdd={() => setCount(count + 1)}
             onRemove={() => setCount(count - 1)}
             size="medium"
+          />
+        </View>
+        <Text />
+        <View>
+          <Item
+            variant="primary"
+            title={'List item title'}
+            onPress={() => {}}
+          />
+        </View>
+        <Text />
+        <View>
+          <Item
+            variant="secondary"
+            title={'List item title'}
+            onPress={() => console.log('OnPress')}
+            unitsProps={{
+              variant: 'secondary',
+              text: 'g',
+              unit: count,
+              max: 200,
+              min: 0,
+              onAdd: () => setCount(count + 1),
+              onRemove: () => setCount(count - 1),
+              size: 'medium',
+            }}
           />
         </View>
       </ScrollView>
