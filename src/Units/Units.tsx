@@ -16,8 +16,8 @@ import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 export interface TypographyProps {
   text?: string;
   unit: number;
-  onAdd: () => any;
-  onRemove: () => any;
+  onAdd?: () => any;
+  onRemove?: () => any;
   style?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<TextStyle>;
   variant: 'primary' | 'secondary';
@@ -62,23 +62,27 @@ export const Units: React.FC<TypographyProps> = ({
 
   return (
     <View style={[styles.container, style]}>
-      <TouchableOpacity onPress={() => notMin && onRemove()}>
-        <FontAwesomeIcon
-          icon={faMinus}
-          color={color}
-          size={fontSize}
-          style={notMin ? styles.enabled : styles.disabled}
-        />
-      </TouchableOpacity>
+      {onRemove && (
+        <TouchableOpacity onPress={() => notMin && onRemove()}>
+          <FontAwesomeIcon
+            icon={faMinus}
+            color={color}
+            size={fontSize}
+            style={notMin ? styles.enabled : styles.disabled}
+          />
+        </TouchableOpacity>
+      )}
       <Text style={[{ color, fontSize }, textStyle]}>{`${unit}${text}`}</Text>
-      <TouchableOpacity onPress={() => notMax && onAdd()}>
-        <FontAwesomeIcon
-          icon={faPlus}
-          color={color}
-          size={fontSize}
-          style={notMax ? styles.enabled : styles.disabled}
-        />
-      </TouchableOpacity>
+      {onAdd && (
+        <TouchableOpacity onPress={() => notMax && onAdd()}>
+          <FontAwesomeIcon
+            icon={faPlus}
+            color={color}
+            size={fontSize}
+            style={notMax ? styles.enabled : styles.disabled}
+          />
+        </TouchableOpacity>
+      )}
     </View>
   );
 };
