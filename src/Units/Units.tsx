@@ -13,7 +13,7 @@ import { useTheme } from 'beer-ui';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 
-export interface UnitProps {
+export interface UnitsProps {
   text?: string;
   unit: number;
   onAdd?: () => any;
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export const Units: React.FC<UnitProps> = ({
+export const Units: React.FC<UnitsProps> = ({
   onAdd,
   onRemove,
   text,
@@ -72,7 +72,9 @@ export const Units: React.FC<UnitProps> = ({
           />
         </TouchableOpacity>
       )}
-      <Text style={[{ color, fontSize }, textStyle]}>{`${unit}${text}`}</Text>
+      <Text style={[{ color, fontSize }, textStyle]}>
+        {`${unit}${text || ''}`}
+      </Text>
       {onAdd && (
         <TouchableOpacity onPress={() => notMax && onAdd()}>
           <FontAwesomeIcon
