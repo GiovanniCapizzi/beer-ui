@@ -10,6 +10,7 @@ import { Chip } from './Chip/Chip';
 import { Header } from './Headers/Header';
 import { BigButton } from './Button/BigButton';
 import { CardItem } from './List/CardItem';
+import { Units } from './Units/Units';
 import { CardCarousel } from './Image/CardCarousel';
 import { defaultColors } from './Common/colors';
 
@@ -26,6 +27,7 @@ export {
   useTheme,
   CardItem,
   BigButton,
+  Units,
   ColorsProps,
   defaultColors,
   CardCarousel,

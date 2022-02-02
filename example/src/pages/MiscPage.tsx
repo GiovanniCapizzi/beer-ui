@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { SafeAreaView, ScrollView, StyleSheet, View } from 'react-native';
-import { CardItem } from '../../../src';
+import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
 import {
   faClock,
   faUsers,
   faUtensils,
 } from '@fortawesome/free-solid-svg-icons';
+import { CardItem, Units } from 'beer-ui';
 
 const styles = StyleSheet.create({
   container: {
@@ -39,6 +39,7 @@ const imageSource = {
 
 export default function MiscPage() {
   const [itemSelected, setItemSelected] = useState(false);
+  const [count, setCount] = useState(0);
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scroll}>
@@ -55,6 +56,32 @@ export default function MiscPage() {
             }}
             selected={itemSelected}
             data={mockCardItemData}
+          />
+        </View>
+        <Text />
+        <View>
+          <Units
+            variant="primary"
+            text={'g'}
+            unit={count}
+            max={10}
+            min={0}
+            onAdd={() => setCount(count + 1)}
+            onRemove={() => setCount(count - 1)}
+            size="medium"
+          />
+        </View>
+        <Text />
+        <View>
+          <Units
+            variant="secondary"
+            text={'g'}
+            unit={count}
+            max={10}
+            min={0}
+            onAdd={() => setCount(count + 1)}
+            onRemove={() => setCount(count - 1)}
+            size="medium"
           />
         </View>
       </ScrollView>

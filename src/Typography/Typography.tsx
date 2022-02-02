@@ -14,7 +14,7 @@ export interface TypographyProps {
 export const Typography: React.FC<TypographyProps> = ({
   onPress,
   text,
-  variant,
+  variant = 'primary',
   size,
   textStyle,
 }) => {
