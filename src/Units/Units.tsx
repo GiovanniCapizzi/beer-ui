@@ -13,7 +13,7 @@ import { useTheme } from 'beer-ui';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 
-export interface TypographyProps {
+export interface UnitProps {
   text?: string;
   unit: number;
   onAdd?: () => any;
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export const Units: React.FC<TypographyProps> = ({
+export const Units: React.FC<UnitProps> = ({
   onAdd,
   onRemove,
   text,
