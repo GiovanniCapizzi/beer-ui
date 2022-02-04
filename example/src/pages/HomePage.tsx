@@ -10,6 +10,7 @@ import {
   faSquare,
   faStream,
   faTags,
+  faTerminal,
   faTextHeight,
 } from '@fortawesome/free-solid-svg-icons';
 
@@ -27,6 +28,7 @@ const styles = StyleSheet.create({
 const components = {
   Headers: faHeading,
   Images: faImages,
+  Fields: faTerminal,
   Buttons: faSquare,
   Typography: faTextHeight,
   Tags: faTags,

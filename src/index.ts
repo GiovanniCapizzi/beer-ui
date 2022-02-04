@@ -14,6 +14,7 @@ import { Units } from './Units/Units';
 import { Item } from './List/Item';
 import { CardCarousel } from './Image/CardCarousel';
 import { defaultColors } from './Common/colors';
+import { Field } from './Field/Field';
 
 export {
   Chip,
@@ -30,6 +31,7 @@ export {
   BigButton,
   Units,
   Item,
+  Field,
   ColorsProps,
   defaultColors,
   CardCarousel,

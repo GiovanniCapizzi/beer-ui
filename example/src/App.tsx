@@ -13,6 +13,7 @@ import PalettePage from './pages/PalettePage';
 import { StoreProvider } from 'easy-peasy';
 import { store, useStoreState } from './redux/store';
 import MiscPage from './pages/MiscPage';
+import FieldsPage from './pages/FieldsPage';
 
 const Stack = createNativeStackNavigator();
 
@@ -27,6 +28,7 @@ const Router = () => {
           <Stack.Screen name="BeerUI" component={HomePage} />
           <Stack.Screen name="Headers" component={HeaderPage} />
           <Stack.Screen name="Images" component={ImagesPage} />
+          <Stack.Screen name="Fields" component={FieldsPage} />
           <Stack.Screen name="Buttons" component={ButtonPage} />
           <Stack.Screen name="Typography" component={TypographyPage} />
           <Stack.Screen name="Tags" component={TagsPage} />

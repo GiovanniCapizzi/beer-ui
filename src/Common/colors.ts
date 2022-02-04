@@ -11,6 +11,7 @@ export interface ColorsProps {
   background: {
     light: string;
   };
+  error: string;
 }
 
 export const defaultColors: ColorsProps = {
@@ -24,6 +25,7 @@ export const defaultColors: ColorsProps = {
   background: {
     light: '#F8F8F8',
   },
+  error: '#FF375F',
 };
 
 export const buildTheme = (colors: ColorsProps) => ({
@@ -136,6 +138,11 @@ export const buildTheme = (colors: ColorsProps) => ({
       border: transparentize(0.8, colors.accent.base),
       background: transparentize(0.8, colors.accent.base),
     },
+  },
+  field: {
+    color: colors.accent.base,
+    background: colors.white,
+    error: colors.error,
   },
   colors,
 });
