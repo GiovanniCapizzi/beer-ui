@@ -40,7 +40,7 @@ interface CardItemViewProps {
   background: string;
 }
 
-const CardItemView = styled(View)<CardItemViewProps>`
+const CardItemView = styled(TouchableOpacity)<CardItemViewProps>`
   background: ${(p) => p.background};
   border-radius: 8px;
   flex-direction: row;
@@ -140,7 +140,11 @@ export const CardItem: React.FC<CardItemProps> = ({
   );
 
   return (
-    <CardItemView background={palette.background} style={[shadowStyle, style]}>
+    <CardItemView
+      background={palette.background}
+      style={[shadowStyle, style]}
+      onPress={onContentPress}
+    >
       <TouchableOpacity style={styles.image} onPress={onImagePress}>
         <Image source={imageSource} style={styles.image} />
         {selected && (
@@ -154,7 +158,7 @@ export const CardItem: React.FC<CardItemProps> = ({
           </View>
         )}
       </TouchableOpacity>
-      <TouchableOpacity style={styles.content} onPress={onContentPress}>
+      <View style={styles.content}>
         <View style={styles.heading}>
           <Typography
             text={title}
@@ -170,7 +174,7 @@ export const CardItem: React.FC<CardItemProps> = ({
           )}
         </View>
         <View style={styles.footer}>{footer}</View>
-      </TouchableOpacity>
+      </View>
     </CardItemView>
   );
 };
