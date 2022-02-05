@@ -1,15 +1,14 @@
 import * as React from 'react';
 import { useMemo } from 'react';
 import {
+  ActivityIndicator,
   Image,
   ImageSourcePropType,
-  StyleProp,
   StyleSheet,
   TextInput,
   TextInputProps,
   TouchableOpacity,
   View,
-  ViewStyle,
 } from 'react-native';
 import textSize from '../Common/sizes';
 import { Typography, useTheme } from 'beer-ui';
@@ -19,6 +18,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
 interface Result {
+  id: string;
   title: string;
   subtitle?: string;
   category?: string;
@@ -26,14 +26,13 @@ interface Result {
 }
 
 export interface SearchFieldProps extends TextInputProps {
-  style?: StyleProp<ViewStyle>;
-  textStyle?: StyleProp<ViewStyle>;
-  resultsStyle?: StyleProp<ViewStyle>;
   size: 'small' | 'medium' | 'large';
   text: string;
   onChange: (value: any) => void;
+  onResultPress: (item: Result) => any;
   results?: Result[];
   noResultMessage: string;
+  loading?: boolean;
 }
 
 interface TextFieldWrapProps {
@@ -69,7 +68,7 @@ interface ResultProps {
   background: string;
 }
 
-const Result = styled(View)<ResultProps>`
+const Result = styled(TouchableOpacity)<ResultProps>`
   flex-direction: row;
   background-color: ${(p) => p.background};
 `;
@@ -94,23 +93,25 @@ const styles = StyleSheet.create({
   results: {
     ...lightShadowStyle,
     paddingTop: 42,
-    paddingBottom: 24,
+    paddingBottom: 12,
     marginTop: -28, // min-height 56/2
     backgroundColor: 'white',
     borderRadius: 8,
     alignItems: 'center',
   },
+  loading: {
+    marginRight: 4,
+  },
 });
 
 export const SearchField: React.FC<SearchFieldProps> = ({
-  style,
-  textStyle,
-  resultsStyle,
+  loading,
   size,
   text,
   onChange,
   results,
   noResultMessage,
+  onResultPress,
   ...props
 }) => {
   const { searchField: palette } = useTheme();
@@ -118,26 +119,36 @@ export const SearchField: React.FC<SearchFieldProps> = ({
 
   const data = useMemo(
     () =>
-      results?.map(({ title, subtitle, category, image }, idx) => (
-        <Result
-          key={idx}
-          background={idx % 2 ? palette.row.accent : palette.row.light}
-        >
-          {image && <Image source={image} style={styles.image} />}
-          <View style={styles.content}>
-            <View>
-              <Typography
-                text={title}
-                variant="secondary"
-                textStyle={{ color: palette.row.title }}
-              />
-              <Typography text={subtitle || ''} variant="secondary" />
+      results?.map((item, idx) => {
+        const { title, subtitle, category, image } = item;
+        return (
+          <Result
+            key={idx}
+            onPress={() => onResultPress(item)}
+            background={idx % 2 ? palette.row.accent : palette.row.light}
+          >
+            {image && <Image source={image} style={styles.image} />}
+            <View style={styles.content}>
+              <View>
+                <Typography
+                  text={title}
+                  variant="secondary"
+                  textStyle={{ color: palette.row.title }}
+                />
+                <Typography text={subtitle || ''} variant="secondary" />
+              </View>
+              <Typography text={category || ''} textStyle={styles.bold} />
             </View>
-            <Typography text={category || ''} textStyle={styles.bold} />
-          </View>
-        </Result>
-      )),
-    [palette.row, results]
+          </Result>
+        );
+      }),
+    [
+      onResultPress,
+      palette.row.accent,
+      palette.row.light,
+      palette.row.title,
+      results,
+    ]
   );
 
   return (
@@ -145,10 +156,9 @@ export const SearchField: React.FC<SearchFieldProps> = ({
       <TextFieldWrap
         borderColor={palette.color}
         background={palette.background}
-        style={[!results && lightShadowStyle, style]}
+        style={!results && lightShadowStyle}
       >
         <TextField
-          style={textStyle}
           fontSize={fontSize}
           onChangeText={onChange}
           value={text}
@@ -156,6 +166,13 @@ export const SearchField: React.FC<SearchFieldProps> = ({
           placeholderTextColor={palette.color}
           {...props}
         />
+        {loading && (
+          <ActivityIndicator
+            size="small"
+            color={palette.color}
+            style={styles.loading}
+          />
+        )}
         {!!text && (
           <TouchableOpacity onPress={() => onChange('')}>
             <FontAwesomeIcon icon={faTimes} color={palette.color} size={22} />
@@ -163,7 +180,7 @@ export const SearchField: React.FC<SearchFieldProps> = ({
         )}
       </TextFieldWrap>
       {!!results && (
-        <View style={[styles.results, resultsStyle]}>
+        <View style={styles.results}>
           {results.length ? (
             data
           ) : (
