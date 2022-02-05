@@ -18,6 +18,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  text: {
+    fontSize: 11,
+  },
   bar: {
     width: 30,
     minHeight: 4,
@@ -61,7 +64,9 @@ export const IconButton: React.FC<IconButtonProps> = ({
         </View>
       )}
       <FontAwesomeIcon icon={icon} color={color} size={24} />
-      {title && <Typography text={title} textStyle={{ color }} />}
+      {title && (
+        <Typography text={title} textStyle={[styles.text, { color }]} />
+      )}
       {active && <View style={[styles.bar, { backgroundColor: color }]} />}
     </TouchableOpacity>
   );

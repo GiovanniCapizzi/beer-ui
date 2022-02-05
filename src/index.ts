@@ -17,6 +17,7 @@ import { CardCarousel } from './Image/CardCarousel';
 import { Field } from './Field/Field';
 import { IconButton } from './Button/IconButton';
 import { SearchField } from './Field/SearchField';
+import { BottomBar } from './BottomBar/BottomBar';
 
 export {
   Chip,
@@ -36,6 +37,7 @@ export {
   Field,
   SearchField,
   IconButton,
+  BottomBar,
   ColorsProps,
   defaultColors,
   CardCarousel,

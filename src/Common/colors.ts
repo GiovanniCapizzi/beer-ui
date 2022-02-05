@@ -76,6 +76,9 @@ export const buildTheme = (colors: ColorsProps) => ({
     light: colors.white,
     secondary: colors.accent.light,
   },
+  bottomBar: {
+    background: colors.accent.light,
+  },
   bigButton: {
     primary: {
       text: colors.accent.base,
