@@ -12,7 +12,7 @@ export interface ColorsProps {
   background: {
     light: string;
   };
-  error: string;
+  warn: string;
 }
 
 export const defaultColors: ColorsProps = {
@@ -27,7 +27,7 @@ export const defaultColors: ColorsProps = {
   background: {
     light: '#F8F8F8',
   },
-  error: '#FF375F',
+  warn: '#FF375F',
 };
 
 export const buildTheme = (colors: ColorsProps) => ({
@@ -69,6 +69,12 @@ export const buildTheme = (colors: ColorsProps) => ({
       background: 'transparent',
       border: colors.white,
     },
+  },
+  iconButton: {
+    primary: colors.white,
+    badge: colors.warn,
+    light: colors.white,
+    secondary: colors.accent.light,
   },
   bigButton: {
     primary: {
@@ -144,7 +150,7 @@ export const buildTheme = (colors: ColorsProps) => ({
   field: {
     color: colors.accent.base,
     background: colors.white,
-    error: colors.error,
+    error: colors.warn,
   },
   searchField: {
     row: {

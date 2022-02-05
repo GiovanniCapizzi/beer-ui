@@ -1,4 +1,5 @@
 import type { ColorsProps } from './Common/colors';
+import { defaultColors } from './Common/colors';
 import { ThemeProvider, useTheme } from './Theme/ThemeProvider';
 import { Button } from './Button/Button';
 import { RoundButton } from './Button/RoundButton';
@@ -13,8 +14,8 @@ import { CardItem } from './List/CardItem';
 import { Units } from './Units/Units';
 import { Item } from './List/Item';
 import { CardCarousel } from './Image/CardCarousel';
-import { defaultColors } from './Common/colors';
 import { Field } from './Field/Field';
+import { IconButton } from './Button/IconButton';
 import { SearchField } from './Field/SearchField';
 
 export {
@@ -34,6 +35,7 @@ export {
   Item,
   Field,
   SearchField,
+  IconButton,
   ColorsProps,
   defaultColors,
   CardCarousel,

@@ -1,6 +1,12 @@
 import * as React from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { BigButton, Button, defaultColors, RoundButton } from 'beer-ui';
+import {
+  BigButton,
+  Button,
+  defaultColors,
+  IconButton,
+  RoundButton,
+} from 'beer-ui';
 import {
   faArrowLeft,
   faArrowRight,
@@ -11,6 +17,7 @@ import {
   faImage,
   faPlus,
   faShare,
+  faUserCircle,
 } from '@fortawesome/free-solid-svg-icons';
 
 const dish = require('../res/budae-jigae.png');
@@ -25,12 +32,17 @@ const styles = StyleSheet.create({
   },
   rowStart: {
     flexDirection: 'row',
-    alignItems: 'flex-start',
+    alignItems: 'center',
   },
   backgroundPanel: {
     paddingVertical: 12,
     paddingLeft: 12,
     borderRadius: 4,
+    backgroundColor: defaultColors.accent.light,
+  },
+  iconButtonBackground: {
+    padding: 12,
+    marginLeft: 12,
     backgroundColor: defaultColors.accent.light,
   },
   rowEnd: {
@@ -163,6 +175,29 @@ export default function ButtonPage() {
         <Text />
         <Text />
         <View style={styles.rowStart}>
+          <IconButton
+            title="Profile"
+            active={true}
+            variant={'secondary'}
+            icon={faUserCircle}
+            badge={'6'}
+            onPress={console.log}
+          />
+          <View style={[styles.iconButtonBackground]}>
+            <IconButton
+              title="Profile"
+              active={true}
+              variant={'primary'}
+              icon={faUserCircle}
+              badge={'6'}
+              onPress={console.log}
+            />
+          </View>
+        </View>
+        <Text />
+        <Text />
+        <Text />
+        <View style={styles.rowStart}>
           <BigButton
             style={styles.spaceRight}
             title="Big button"
@@ -197,7 +232,6 @@ export default function ButtonPage() {
             width={114}
           />
         </View>
-        <Text />
         <Text />
       </ScrollView>
     </SafeAreaView>
