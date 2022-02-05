@@ -3,6 +3,7 @@ import {
   StyleProp,
   StyleSheet,
   TextInput,
+  TextInputProps,
   View,
   ViewStyle,
 } from 'react-native';
@@ -13,25 +14,26 @@ import { lightShadowStyle } from '../Common/styles';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
-export interface FieldProps {
+export interface FieldProps extends TextInputProps {
   style?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<ViewStyle>;
   size: 'small' | 'medium' | 'large';
   text: string;
-  onChange: () => any;
+  onChange: (value: any) => void;
   shadow?: boolean;
   invalidText?: string;
 }
 
 interface TextFieldWrapProps {
   borderColor: string;
+  background: string;
 }
 
 const TextFieldWrap = styled(View)<TextFieldWrapProps>`
   border: 1px solid ${(p) => p.borderColor};
   border-radius: 42px;
   flex-direction: row;
-  background-color: white;
+  background-color: ${(p) => p.background};
   padding: 0 16px;
   align-items: center;
   min-height: 56px;
@@ -73,6 +75,7 @@ export const Field: React.FC<FieldProps> = ({
   return (
     <View>
       <TextFieldWrap
+        background={palette.background}
         borderColor={color}
         style={[shadow && lightShadowStyle, style]}
       >

@@ -7,6 +7,7 @@ export interface ColorsProps {
     dark: string;
   };
   white: string;
+  grey: string;
   black: string;
   background: {
     light: string;
@@ -21,7 +22,8 @@ export const defaultColors: ColorsProps = {
     dark: '#E8A131',
   },
   white: '#FFF',
-  black: '#585858',
+  grey: '#585858',
+  black: '#000',
   background: {
     light: '#F8F8F8',
   },
@@ -34,7 +36,7 @@ export const buildTheme = (colors: ColorsProps) => ({
   },
   text: {
     primary: colors.accent.base,
-    secondary: colors.black,
+    secondary: colors.grey,
   },
   cardImage: {
     primary: colors.accent.light,
@@ -115,13 +117,13 @@ export const buildTheme = (colors: ColorsProps) => ({
   },
   cardItem: {
     primary: {
-      text: colors.black,
+      text: colors.grey,
       selectedIcon: colors.white,
       highlight: colors.accent.base,
       background: colors.background.light,
     },
     secondary: {
-      text: colors.black,
+      text: colors.grey,
       selectedIcon: colors.white,
       highlight: colors.accent.light,
       background: colors.background.light,
@@ -129,12 +131,12 @@ export const buildTheme = (colors: ColorsProps) => ({
   },
   item: {
     primary: {
-      text: colors.black,
-      border: transparentize(0.9, colors.black),
+      text: colors.grey,
+      border: transparentize(0.9, colors.grey),
       background: colors.background.light,
     },
     secondary: {
-      text: colors.black,
+      text: colors.grey,
       border: transparentize(0.8, colors.accent.base),
       background: transparentize(0.8, colors.accent.base),
     },
@@ -143,6 +145,15 @@ export const buildTheme = (colors: ColorsProps) => ({
     color: colors.accent.base,
     background: colors.white,
     error: colors.error,
+  },
+  searchField: {
+    row: {
+      title: colors.black,
+      accent: transparentize(0.8, colors.accent.base),
+      light: colors.background.light,
+    },
+    color: colors.accent.base,
+    background: colors.white,
   },
   colors,
 });

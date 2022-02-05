@@ -15,6 +15,7 @@ import { Item } from './List/Item';
 import { CardCarousel } from './Image/CardCarousel';
 import { defaultColors } from './Common/colors';
 import { Field } from './Field/Field';
+import { SearchField } from './Field/SearchField';
 
 export {
   Chip,
@@ -32,6 +33,7 @@ export {
   Units,
   Item,
   Field,
+  SearchField,
   ColorsProps,
   defaultColors,
   CardCarousel,
