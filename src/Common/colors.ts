@@ -164,5 +164,11 @@ export const buildTheme = (colors: ColorsProps) => ({
     color: colors.accent.base,
     background: colors.white,
   },
+  unitField: {
+    error: colors.warn,
+    accent: transparentize(0.8, colors.accent.base),
+    color: colors.accent.base,
+    background: colors.white,
+  },
   colors,
 });

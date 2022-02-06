@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useEffect, useMemo, useState } from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { Field, SearchField } from 'beer-ui';
+import { Field, SearchField, UnitField } from 'beer-ui';
 
 const dish = require('../res/budae-jigae.png');
 
@@ -67,9 +67,17 @@ const data = [
   },
 ];
 
+const units = [
+  { label: 'Kilograms', value: 'Kg' },
+  { label: 'Grams', value: 'g' },
+  { label: 'Liters', value: 'l' },
+];
+
 export default function FieldsPage() {
   const [text, setText] = useState('');
   const [searchText, setSearchText] = useState('');
+  const [unitText, setUnitText] = useState(0);
+  const [unit, setUnit] = useState(units[0]);
   const [loading, setLoading] = useState(false);
 
   // Your custom search implementation ...
@@ -121,6 +129,31 @@ export default function FieldsPage() {
             results={searchResults}
             placeholder="Search field ..."
             onResultPress={console.log}
+          />
+          <Text />
+          <Text />
+          <UnitField
+            size={'medium'}
+            onChange={(value) => setUnitText(value.replace(/[^0-9]/g, ''))}
+            text={unitText}
+            units={units}
+            shadow
+            keyboardType="numeric"
+            placeholder="Quantity"
+            onUnitChange={setUnit}
+            unit={unit}
+          />
+          <Text />
+          <UnitField
+            size={'medium'}
+            onChange={(value) => setUnitText(value.replace(/[^0-9]/g, ''))}
+            text={unitText}
+            units={units}
+            keyboardType="numeric"
+            placeholder="Quantity"
+            onUnitChange={setUnit}
+            unit={unit}
+            invalidText="Required field"
           />
         </View>
       </ScrollView>

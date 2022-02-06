@@ -18,6 +18,7 @@ import { Field } from './Field/Field';
 import { IconButton } from './Button/IconButton';
 import { SearchField } from './Field/SearchField';
 import { BottomBar } from './BottomBar/BottomBar';
+import { UnitField } from './Field/UnitField';
 
 export {
   Chip,
@@ -37,6 +38,7 @@ export {
   Field,
   SearchField,
   IconButton,
+  UnitField,
   BottomBar,
   ColorsProps,
   defaultColors,
