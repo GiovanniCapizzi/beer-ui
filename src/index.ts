@@ -19,8 +19,10 @@ import { IconButton } from './Button/IconButton';
 import { SearchField } from './Field/SearchField';
 import { BottomBar } from './BottomBar/BottomBar';
 import { UnitField } from './Field/UnitField';
+import { Avatar } from './Image/Avatar';
 
 export {
+  Avatar,
   Chip,
   Button,
   Typography,

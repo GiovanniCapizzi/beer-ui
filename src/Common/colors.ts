@@ -170,5 +170,13 @@ export const buildTheme = (colors: ColorsProps) => ({
     color: colors.accent.base,
     background: colors.white,
   },
+  avatar: {
+    primary: {
+      background: colors.accent.light,
+    },
+    secondary: {
+      background: colors.accent.base,
+    },
+  },
   colors,
 });

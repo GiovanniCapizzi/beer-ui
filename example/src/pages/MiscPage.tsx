@@ -11,7 +11,9 @@ import {
   faUsers,
   faUtensils,
 } from '@fortawesome/free-solid-svg-icons';
-import { BottomBar, CardItem, Item, Units } from 'beer-ui';
+import { Avatar, BottomBar, CardItem, Item, Units } from 'beer-ui';
+
+const dish = require('../res/budae-jigae.png');
 
 const styles = StyleSheet.create({
   container: {
@@ -23,6 +25,9 @@ const styles = StyleSheet.create({
   },
   spaceY: {
     marginVertical: 42,
+  },
+  stretch: {
+    alignItems: 'flex-start',
   },
 });
 
@@ -142,6 +147,21 @@ export default function MiscPage() {
                 onAdd: () => setCount(count + 1),
                 onRemove: () => setCount(count - 1),
                 size: 'medium',
+              }}
+            />
+          </View>
+          <Text />
+          <View style={styles.stretch}>
+            <Avatar
+              source={dish}
+              onPress={() => console.log('onPress')}
+              onImagePress={() => console.log('onImagePress')}
+              size={56}
+              variant="primary"
+              textProps={{
+                text: 'Martha Khan Jones',
+                variant: 'secondary',
+                size: 'large',
               }}
             />
           </View>
