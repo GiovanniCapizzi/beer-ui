@@ -12,7 +12,7 @@ import {
 import styled from 'styled-components';
 import { Typography, useTheme } from 'beer-ui';
 import { shadowStyle } from '../Common/styles';
-import type { IconProp } from '@fortawesome/fontawesome-svg-core';
+import type { IconProp, IconName } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import textSize from '../Common/sizes';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
@@ -20,7 +20,7 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 const imageSize = { width: 100, height: 100 };
 
 interface DataItem {
-  icon: IconProp;
+  icon: IconProp | IconName;
   text: string;
 }
 

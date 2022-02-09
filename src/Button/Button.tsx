@@ -6,13 +6,13 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import styled from 'styled-components';
-import type { IconProp } from '@fortawesome/fontawesome-svg-core';
+import type { IconName, IconProp } from '@fortawesome/fontawesome-svg-core';
 import { Typography, useTheme } from 'beer-ui';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
 export interface ButtonProps extends NativeButtonProps {
   variant: 'primary' | 'secondary' | 'white';
-  icon?: IconProp;
+  icon?: IconProp | IconName;
   iconDirection?: 'left' | 'right';
   style?: object;
   slim?: boolean;

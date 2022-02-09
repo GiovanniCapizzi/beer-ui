@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import type { IconProp } from '@fortawesome/fontawesome-svg-core';
+import type { IconProp, IconName } from '@fortawesome/fontawesome-svg-core';
 import { Typography, useTheme } from 'beer-ui';
 
 export interface IconButtonProps {
   active?: boolean;
   variant: 'primary' | 'secondary';
-  icon: IconProp;
+  icon: IconProp | IconName;
   onPress: () => any;
   title?: string;
   badge?: string;

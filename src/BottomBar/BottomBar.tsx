@@ -3,12 +3,12 @@ import { useMemo } from 'react';
 import { StyleSheet, View, ViewStyle } from 'react-native';
 import styled from 'styled-components';
 import { IconButton, RoundButton, useTheme } from 'beer-ui';
-import type { IconProp } from '@fortawesome/fontawesome-svg-core';
+import type { IconName, IconProp } from '@fortawesome/fontawesome-svg-core';
 
 interface BottomBarIcon {
   title: string;
   badge?: string;
-  icon: IconProp;
+  icon: IconProp | IconName;
   big?: boolean;
 }
 

@@ -9,13 +9,13 @@ import {
   View,
 } from 'react-native';
 import styled from 'styled-components';
-import type { IconProp } from '@fortawesome/fontawesome-svg-core';
+import type { IconProp, IconName } from '@fortawesome/fontawesome-svg-core';
 import { Typography, useTheme } from 'beer-ui';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 
 export interface BigButtonProps extends NativeButtonProps {
   variant: 'primary' | 'secondary';
-  icon?: IconProp;
+  icon?: IconProp | IconName;
   style?: Record<string, string | number>;
   backgroundImage?: ImageSourcePropType;
   height?: number;

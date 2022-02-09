@@ -2,16 +2,16 @@ import * as React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import type { IconProp } from '@fortawesome/fontawesome-svg-core';
+import type { IconProp, IconName } from '@fortawesome/fontawesome-svg-core';
 import { lightShadowStyle } from '../Common/styles';
 import { Typography } from 'beer-ui';
-import { useTheme } from '../Theme/ThemeProvider';
+import { useTheme } from 'beer-ui';
 
 export interface RoundButtonProps {
   title?: string;
   variant: 'primary' | 'secondary';
   size: number;
-  icon: IconProp;
+  icon: IconProp | IconName;
   shadow?: boolean;
   style?: object;
   onPress: () => any;
