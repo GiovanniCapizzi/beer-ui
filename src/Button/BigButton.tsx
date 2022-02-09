@@ -16,7 +16,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 export interface BigButtonProps extends NativeButtonProps {
   variant: 'primary' | 'secondary';
   icon?: IconProp;
-  style?: Record<string, string>;
+  style?: Record<string, string | number>;
   backgroundImage?: ImageSourcePropType;
   height?: number;
   width?: number;
