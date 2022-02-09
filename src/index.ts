@@ -20,6 +20,7 @@ import { SearchField } from './Field/SearchField';
 import { BottomBar } from './BottomBar/BottomBar';
 import { UnitField } from './Field/UnitField';
 import { Avatar } from './Image/Avatar';
+import { Overlay } from './Common/Overlay/Overlay';
 
 export {
   Avatar,
@@ -42,6 +43,7 @@ export {
   IconButton,
   UnitField,
   BottomBar,
+  Overlay,
   ColorsProps,
   defaultColors,
   CardCarousel,

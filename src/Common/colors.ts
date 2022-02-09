@@ -178,5 +178,9 @@ export const buildTheme = (colors: ColorsProps) => ({
       background: colors.accent.base,
     },
   },
+  overlay: {
+    background: colors.black,
+    icon: colors.white,
+  },
   colors,
 });

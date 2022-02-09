@@ -8,6 +8,7 @@ import {
   faImages,
   faPencilAlt,
   faSquare,
+  faSquareFull,
   faStream,
   faTags,
   faTerminal,
@@ -33,6 +34,7 @@ const components = {
   Typography: faTextHeight,
   Tags: faTags,
   Carousel: faImage,
+  Overlay: faSquareFull,
   Misc: faStream,
 };
 
