@@ -38,6 +38,10 @@ export const buildTheme = (colors: ColorsProps) => ({
     primary: colors.accent.base,
     secondary: colors.grey,
   },
+  rating: {
+    primary: colors.accent.light,
+    secondary: colors.accent.base,
+  },
   cardImage: {
     primary: colors.accent.light,
     secondary: colors.accent.base,

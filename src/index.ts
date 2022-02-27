@@ -21,6 +21,7 @@ import { BottomBar } from './BottomBar/BottomBar';
 import { UnitField } from './Field/UnitField';
 import { Avatar } from './Image/Avatar';
 import { Overlay } from './Common/Overlay/Overlay';
+import { Rating } from './Rating/Rating';
 
 export {
   Avatar,
@@ -44,6 +45,7 @@ export {
   UnitField,
   BottomBar,
   Overlay,
+  Rating,
   ColorsProps,
   defaultColors,
   CardCarousel,

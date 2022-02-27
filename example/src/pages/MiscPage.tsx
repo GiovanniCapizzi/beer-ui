@@ -11,7 +11,7 @@ import {
   faUsers,
   faUtensils,
 } from '@fortawesome/free-solid-svg-icons';
-import { Avatar, BottomBar, CardItem, Item, Units } from 'beer-ui';
+import { Avatar, BottomBar, CardItem, Item, Rating, Units } from 'beer-ui';
 
 const dish = require('../res/budae-jigae.png');
 
@@ -28,6 +28,9 @@ const styles = StyleSheet.create({
   },
   stretch: {
     alignItems: 'flex-start',
+  },
+  rating: {
+    marginVertical: 4,
   },
 });
 
@@ -79,6 +82,8 @@ export default function MiscPage() {
   const [itemSelected, setItemSelected] = useState(false);
   const [count, setCount] = useState(0);
   const [selectedIcon, setSelectedIcon] = useState('Home');
+  const [starLevel, setStarLevel] = useState(3);
+
   return (
     <View style={styles.container}>
       <SafeAreaView style={styles.container}>
@@ -163,6 +168,31 @@ export default function MiscPage() {
                 variant: 'secondary',
                 size: 'large',
               }}
+            />
+          </View>
+          <Text />
+          <View style={styles.rating}>
+            <Rating
+              variant="primary"
+              size="small"
+              level={starLevel}
+              onPress={(level) => setStarLevel(level)}
+            />
+          </View>
+          <View style={styles.rating}>
+            <Rating
+              variant="primary"
+              size="medium"
+              level={starLevel}
+              onPress={(level) => setStarLevel(level)}
+            />
+          </View>
+          <View style={styles.rating}>
+            <Rating
+              variant="primary"
+              size="large"
+              level={starLevel}
+              onPress={(level) => setStarLevel(level)}
             />
           </View>
         </ScrollView>
