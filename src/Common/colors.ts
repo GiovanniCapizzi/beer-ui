@@ -142,6 +142,11 @@ export const buildTheme = (colors: ColorsProps) => ({
       background: colors.background.light,
     },
   },
+  flatCardItem: {
+    text: colors.grey,
+    highlight: colors.accent.base,
+    background: colors.background.light,
+  },
   item: {
     primary: {
       text: colors.grey,

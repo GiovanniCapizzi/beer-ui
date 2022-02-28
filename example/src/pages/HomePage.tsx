@@ -3,6 +3,7 @@ import { useMemo } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Button, Line, Typography } from 'beer-ui';
 import {
+  faCreditCard,
   faHeading,
   faImage,
   faImages,
@@ -36,6 +37,7 @@ const components = {
   Carousel: faImage,
   Overlay: faSquareFull,
   Misc: faStream,
+  Cards: faCreditCard,
 };
 
 const ComponentButtons = ({ navigation }) => {

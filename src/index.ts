@@ -22,6 +22,7 @@ import { UnitField } from './Field/UnitField';
 import { Avatar } from './Image/Avatar';
 import { Overlay } from './Common/Overlay/Overlay';
 import { Rating } from './Rating/Rating';
+import { FlatCardItem } from './List/FlatCardItem';
 
 export {
   Avatar,
@@ -46,6 +47,7 @@ export {
   BottomBar,
   Overlay,
   Rating,
+  FlatCardItem,
   ColorsProps,
   defaultColors,
   CardCarousel,

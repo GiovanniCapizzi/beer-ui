@@ -3,15 +3,12 @@ import { useState } from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
 import {
   faBook,
-  faClock,
   faFile,
   faHome,
   faShoppingCart,
   faUserCircle,
-  faUsers,
-  faUtensils,
 } from '@fortawesome/free-solid-svg-icons';
-import { Avatar, BottomBar, CardItem, Item, Rating, Units } from 'beer-ui';
+import { Avatar, BottomBar, Item, Rating, Units } from 'beer-ui';
 
 const dish = require('../res/budae-jigae.png');
 
@@ -33,25 +30,6 @@ const styles = StyleSheet.create({
     marginVertical: 4,
   },
 });
-
-const mockCardItemData = [
-  {
-    icon: faClock,
-    text: '35 min',
-  },
-  {
-    icon: faUtensils,
-    text: 'easy',
-  },
-  {
-    icon: faUsers,
-    text: '2',
-  },
-];
-
-const imageSource = {
-  uri: 'https://images.unsplash.com/photo-1632229095740-8c75082087c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=420&q=80',
-};
 
 const icons = [
   {
@@ -79,7 +57,6 @@ const icons = [
 ];
 
 export default function MiscPage() {
-  const [itemSelected, setItemSelected] = useState(false);
   const [count, setCount] = useState(0);
   const [selectedIcon, setSelectedIcon] = useState('Home');
   const [starLevel, setStarLevel] = useState(3);
@@ -88,22 +65,6 @@ export default function MiscPage() {
     <View style={styles.container}>
       <SafeAreaView style={styles.container}>
         <ScrollView style={styles.scroll}>
-          <View>
-            <CardItem
-              imageSource={imageSource}
-              variant="primary"
-              title={'Card title'}
-              category={'category'}
-              onContentPress={() => console.log('onPress')}
-              onImagePress={() => {
-                console.log('onImagePress');
-                setItemSelected(!itemSelected);
-              }}
-              selected={itemSelected}
-              data={mockCardItemData}
-            />
-          </View>
-          <Text />
           <View>
             <Units
               variant="primary"

@@ -15,6 +15,7 @@ import { store, useStoreState } from './redux/store';
 import MiscPage from './pages/MiscPage';
 import FieldsPage from './pages/FieldsPage';
 import OverlayPage from './pages/OverlayPage';
+import CardPage from './pages/CardPage';
 
 const Stack = createNativeStackNavigator();
 
@@ -36,6 +37,7 @@ const Router = () => {
           <Stack.Screen name="Carousel" component={CarouselPage} />
           <Stack.Screen name="Palette" component={PalettePage} />
           <Stack.Screen name="Misc" component={MiscPage} />
+          <Stack.Screen name="Cards" component={CardPage} />
           <Stack.Screen name="Overlay" component={OverlayPage} />
         </Stack.Navigator>
       </NavigationContainer>
