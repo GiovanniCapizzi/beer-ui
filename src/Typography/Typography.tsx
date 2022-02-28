@@ -9,6 +9,7 @@ export interface TypographyProps {
   textStyle?: StyleProp<TextStyle>;
   variant?: 'primary' | 'secondary';
   size?: 'small' | 'medium' | 'large';
+  numberOfLines?: number;
 }
 
 export const Typography: React.FC<TypographyProps> = ({
@@ -17,13 +18,19 @@ export const Typography: React.FC<TypographyProps> = ({
   variant = 'primary',
   size,
   textStyle,
+  numberOfLines,
 }) => {
   const { text: palette } = useTheme();
   const color = variant ? palette[variant] : undefined;
   const fontSize = size ? textSize[size] : undefined;
 
   const component = (
-    <Text style={[{ color, fontSize }, textStyle]}>{text}</Text>
+    <Text
+      style={[{ color, fontSize }, textStyle]}
+      numberOfLines={numberOfLines}
+    >
+      {text}
+    </Text>
   );
 
   if (!onPress) {
