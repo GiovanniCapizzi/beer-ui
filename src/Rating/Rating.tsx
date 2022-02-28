@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
 });
 
 export const Rating: React.FC<RatingProps> = ({
-  variant,
+  variant = 'primary',
   style,
   size,
   onPress,
