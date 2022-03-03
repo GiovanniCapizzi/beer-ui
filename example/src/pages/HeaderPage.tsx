@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { useMemo } from 'react';
-import { ScrollView, StyleSheet, View } from 'react-native';
-import { Button, Header, Typography } from 'beer-ui';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Button, Header, Toolbar, Typography } from 'beer-ui';
 import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
 
 const appLogo = require('../res/app-logo.png');
+const dish = require('../res/budae-jigae.png');
 
 const styles = StyleSheet.create({
   container: {
@@ -24,7 +25,8 @@ const styles = StyleSheet.create({
     flex: 1,
     width: 232,
     height: 64,
-    top: 42,
+    marginHorizontal: 4,
+    top: 38,
     zIndex: 1,
     position: 'absolute',
     resizeMode: 'contain',
@@ -106,6 +108,32 @@ export default function HeaderPage() {
             imageStyle: [styles.header, { right: 0 }],
           }}
         />
+        <Typography
+          variant="primary"
+          text="Toolbar Header with Image"
+          size="medium"
+          textStyle={styles.spaceY}
+        />
+        <Toolbar
+          variant="primary"
+          logo={{
+            source: appLogo,
+            imageStyle: { height: 40, width: 200, marginLeft: 4 },
+          }}
+          cover={{
+            source: dish,
+            imageStyle: {
+              borderBottomRightRadius: 16,
+              borderBottomLeftRadius: 16,
+            },
+          }}
+          height={73}
+          onCoverPress={console.log}
+          onClose={console.log}
+        />
+        <Text />
+        <Text />
+        <Text />
       </ScrollView>
     </View>
   );

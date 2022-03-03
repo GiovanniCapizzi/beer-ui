@@ -38,6 +38,11 @@ export const buildTheme = (colors: ColorsProps) => ({
     primary: colors.accent.base,
     secondary: colors.grey,
   },
+  toolbar: {
+    primary: colors.accent.light,
+    secondary: colors.accent.base,
+    closeIcon: colors.white,
+  },
   rating: {
     primary: colors.accent.light,
     secondary: colors.accent.base,

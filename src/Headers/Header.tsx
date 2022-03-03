@@ -20,7 +20,9 @@ export interface HeaderProps {
   reverse?: boolean;
   logo?: {
     source: ImageSourcePropType;
-    imageStyle?: Record<string, string | number>;
+    imageStyle?:
+      | Record<string, string | number>
+      | Record<string, string | number>[];
   };
   component?: React.ReactElement;
 }
