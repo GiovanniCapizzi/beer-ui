@@ -38,6 +38,9 @@ export const buildTheme = (colors: ColorsProps) => ({
     primary: colors.accent.base,
     secondary: colors.grey,
   },
+  imageButton: {
+    border: transparentize(0.73, colors.grey),
+  },
   toolbar: {
     primary: colors.accent.light,
     secondary: colors.accent.base,

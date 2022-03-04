@@ -5,6 +5,7 @@ import {
   Button,
   defaultColors,
   IconButton,
+  ImageButton,
   RoundButton,
 } from 'beer-ui';
 import {
@@ -21,6 +22,17 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 const dish = require('../res/budae-jigae.png');
+// https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg
+
+const googleSrc = {
+  url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/24px-Google_%22G%22_Logo.svg.png',
+};
+const facebookSrc = {
+  url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/100px-2021_Facebook_icon.svg.png',
+};
+const appleSrc = {
+  url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/195px-Apple_logo_black.svg.png',
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -54,6 +66,9 @@ const styles = StyleSheet.create({
   },
   spaceRight: {
     marginRight: 24,
+  },
+  spaceY: {
+    marginVertical: 12,
   },
 });
 
@@ -183,7 +198,7 @@ export default function ButtonPage() {
             badge={'6'}
             onPress={console.log}
           />
-          <View style={[styles.iconButtonBackground]}>
+          <View style={[styles.spaceY, styles.iconButtonBackground]}>
             <IconButton
               title="Profile"
               active={true}
@@ -193,6 +208,28 @@ export default function ButtonPage() {
               onPress={console.log}
             />
           </View>
+        </View>
+        <View style={styles.rowStart}>
+          <ImageButton
+            onPress={console.log}
+            source={googleSrc}
+            width={28}
+            height={28}
+            style={styles.spaceRight}
+          />
+          <ImageButton
+            onPress={console.log}
+            source={facebookSrc}
+            width={28}
+            height={28}
+            style={styles.spaceRight}
+          />
+          <ImageButton
+            onPress={console.log}
+            source={appleSrc}
+            width={24}
+            height={28}
+          />
         </View>
         <Text />
         <Text />

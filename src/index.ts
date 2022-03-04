@@ -23,6 +23,7 @@ import { Avatar } from './Image/Avatar';
 import { Overlay } from './Common/Overlay/Overlay';
 import { Rating } from './Rating/Rating';
 import { Toolbar } from './Headers/Toolbar';
+import { ImageButton } from './Button/ImageButton';
 import { FlatCardItem } from './List/FlatCardItem';
 
 export {
@@ -30,6 +31,7 @@ export {
   Chip,
   Button,
   Typography,
+  ImageButton,
   CardImage,
   BoxImage,
   RoundButton,
