@@ -8,16 +8,6 @@ UI Components for ReactNative
 npm install beer-ui
 ```
 
-## Usage
-
-```js
-import { multiply } from "beer-ui";
-
-// ...
-
-const result = await multiply(3, 7);
-```
-
 ## Contributing
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
