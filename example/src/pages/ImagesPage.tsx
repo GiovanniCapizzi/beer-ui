@@ -61,6 +61,16 @@ export default function ImagesPage() {
           height={128}
           width={undefined}
         />
+        <Text />
+        <CardImage
+          variant="secondary"
+          onPress={() => {}}
+          fullSize
+          source={dish}
+        />
+        <Text />
+        <Text />
+        <Text />
       </ScrollView>
     </SafeAreaView>
   );

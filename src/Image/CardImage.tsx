@@ -9,16 +9,16 @@ import {
   ViewProps,
 } from 'react-native';
 import styled from 'styled-components';
-import { Typography } from 'beer-ui';
+import { Typography, useTheme } from 'beer-ui';
 import { shadowStyle } from '../Common/styles';
-import { useTheme } from 'beer-ui';
 
 export interface CardImageProps {
   source: ImageSourcePropType;
-  title: string;
+  title?: string;
   onPress: () => any;
-  height: number;
+  height?: number;
   width?: number;
+  fullSize?: boolean;
   variant: 'primary' | 'secondary';
   shadow?: boolean;
   bordered?: boolean;
@@ -57,6 +57,9 @@ const styles = StyleSheet.create({
   textStyle: {
     fontWeight: 'bold',
   },
+  rounded: {
+    borderRadius: 8,
+  },
 });
 
 export const CardImage: React.FC<CardImageProps> = ({
@@ -65,6 +68,7 @@ export const CardImage: React.FC<CardImageProps> = ({
   onPress,
   height,
   width,
+  fullSize,
   variant,
   shadow,
   bordered,
@@ -74,7 +78,7 @@ export const CardImage: React.FC<CardImageProps> = ({
 
   const titleContent = (
     <Typography
-      text={title}
+      text={title || ''}
       textStyle={[styles.textStyle, { color: palette.text }]}
     />
   );
@@ -87,8 +91,11 @@ export const CardImage: React.FC<CardImageProps> = ({
       style={shadow && shadowStyle}
       {...props}
     >
-      <Picture source={source} style={{ width, height }} />
-      <Title color={palette[variant]}>{titleContent}</Title>
+      <Picture
+        source={source}
+        style={[!title && styles.rounded, !fullSize && { width, height }]}
+      />
+      {title && <Title color={palette[variant]}>{titleContent}</Title>}
     </Container>
   );
 };
