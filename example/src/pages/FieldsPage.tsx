@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useEffect, useMemo, useState } from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { Field, SearchField, UnitField } from 'beer-ui';
+import { Field, RatingField, SearchField, UnitField } from 'beer-ui';
 
 const dish = require('../res/budae-jigae.png');
 
@@ -12,6 +12,11 @@ const styles = StyleSheet.create({
   },
   scroll: {
     padding: 24,
+  },
+  row: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
   },
 });
 
@@ -78,6 +83,7 @@ export default function FieldsPage() {
   const [searchText, setSearchText] = useState('');
   const [unitText, setUnitText] = useState(0);
   const [unit, setUnit] = useState(units[0]);
+  const [rating, setRating] = useState(0);
   const [loading, setLoading] = useState(false);
 
   // Your custom search implementation ...
@@ -155,6 +161,16 @@ export default function FieldsPage() {
             unit={unit}
             invalidText="Required field"
           />
+          <Text />
+          <View style={styles.row}>
+            <RatingField
+              size="small"
+              keyboardType="numeric"
+              placeholder="Tutte"
+              onRatingChange={setRating}
+              rating={rating}
+            />
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>

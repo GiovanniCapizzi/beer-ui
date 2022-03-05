@@ -25,6 +25,7 @@ import { Rating } from './Rating/Rating';
 import { Toolbar } from './Headers/Toolbar';
 import { ImageButton } from './Button/ImageButton';
 import { FlatCardItem } from './List/FlatCardItem';
+import { RatingField } from './Field/RatingField';
 
 export {
   Avatar,
@@ -48,6 +49,7 @@ export {
   IconButton,
   UnitField,
   BottomBar,
+  RatingField,
   Overlay,
   Toolbar,
   Rating,
