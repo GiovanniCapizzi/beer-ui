@@ -3,10 +3,10 @@ import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
 import {
   BigButton,
   Button,
-  defaultColors,
   IconButton,
   ImageButton,
   RoundButton,
+  useTheme,
 } from 'beer-ui';
 import {
   faArrowLeft,
@@ -50,12 +50,10 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingLeft: 12,
     borderRadius: 4,
-    backgroundColor: defaultColors.accent.light,
   },
   iconButtonBackground: {
     padding: 12,
     marginLeft: 12,
-    backgroundColor: defaultColors.accent.light,
   },
   rowEnd: {
     flexDirection: 'row',
@@ -73,6 +71,7 @@ const styles = StyleSheet.create({
 });
 
 export default function ButtonPage() {
+  const { button: buttonColor } = useTheme();
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scroll}>
@@ -129,7 +128,13 @@ export default function ButtonPage() {
           />
         </View>
         <Text />
-        <View style={[styles.rowStart, styles.backgroundPanel]}>
+        <View
+          style={[
+            styles.rowStart,
+            styles.backgroundPanel,
+            { backgroundColor: buttonColor.primary.background },
+          ]}
+        >
           <Button
             slim
             title="White slim button"
@@ -198,7 +203,13 @@ export default function ButtonPage() {
             badge={'6'}
             onPress={console.log}
           />
-          <View style={[styles.spaceY, styles.iconButtonBackground]}>
+          <View
+            style={[
+              styles.spaceY,
+              styles.iconButtonBackground,
+              { backgroundColor: buttonColor.primary.background },
+            ]}
+          >
             <IconButton
               title="Profile"
               active={true}
