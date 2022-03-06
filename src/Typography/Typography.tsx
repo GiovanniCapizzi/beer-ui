@@ -6,7 +6,7 @@ import { useTheme } from 'beer-ui';
 export interface TypographyProps {
   text: string;
   onPress?: () => any;
-  textStyle?: StyleProp<TextStyle>;
+  textStyle?: StyleProp<TextStyle> | StyleProp<TextStyle>[];
   variant?: 'primary' | 'secondary';
   size?: 'small' | 'medium' | 'large';
   numberOfLines?: number;
