@@ -28,16 +28,16 @@ const styles = StyleSheet.create({
 });
 
 const components = {
-  Headers: faHeading,
-  Images: faImages,
-  Fields: faTerminal,
-  Buttons: faSquare,
   Typography: faTextHeight,
+  Images: faImages,
+  Buttons: faSquare,
+  Fields: faTerminal,
   Tags: faTags,
-  Carousel: faImage,
-  Overlay: faSquareFull,
-  Misc: faStream,
   Cards: faCreditCard,
+  Headers: faHeading,
+  Overlay: faSquareFull,
+  Carousel: faImage,
+  Misc: faStream,
 };
 
 const ComponentButtons = ({ navigation }) => {
@@ -50,6 +50,7 @@ const ComponentButtons = ({ navigation }) => {
             onPress={() => navigation.navigate(key)}
             variant="primary"
             icon={value}
+            slim
           />
           <Text />
         </View>
