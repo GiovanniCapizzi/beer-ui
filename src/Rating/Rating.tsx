@@ -13,6 +13,7 @@ export interface RatingProps {
   style?: ViewStyle;
   level: number;
   size?: 'small' | 'medium' | 'large';
+  readOnly?: boolean;
 }
 
 const styles = StyleSheet.create({
@@ -30,6 +31,7 @@ export const Rating: React.FC<RatingProps> = ({
   size,
   onPress,
   level,
+  readOnly = false,
 }) => {
   const { rating: palette } = useTheme();
   const color = palette[variant];
@@ -40,7 +42,7 @@ export const Rating: React.FC<RatingProps> = ({
       new Array(5).fill(0).map((_, idx) => (
         <TouchableOpacity
           key={idx}
-          onPress={() => onPress(idx + 1)}
+          onPress={() => !readOnly && onPress(idx + 1)}
           style={styles.star}
         >
           <FontAwesomeIcon
@@ -50,7 +52,7 @@ export const Rating: React.FC<RatingProps> = ({
           />
         </TouchableOpacity>
       )),
-    [color, fontSize, level, onPress]
+    [color, fontSize, level, onPress, readOnly]
   );
 
   return <View style={[styles.root, style]}>{stars}</View>;

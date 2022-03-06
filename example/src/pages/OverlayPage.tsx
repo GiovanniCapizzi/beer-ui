@@ -45,6 +45,7 @@ export default function OverlayPage() {
             ratingProps={{
               variant: 'secondary',
               size: 'small',
+              readOnly: true,
               level: starLevel,
               onPress: (level) => setStarLevel(level),
             }}
