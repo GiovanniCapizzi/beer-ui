@@ -38,6 +38,14 @@ export const buildTheme = (colors: ColorsProps) => ({
     primary: colors.accent.base,
     secondary: colors.grey,
   },
+  checkBox: {
+    primary: colors.accent.light,
+    secondary: colors.accent.base,
+  },
+  link: {
+    primary: colors.accent.light,
+    secondary: colors.accent.base,
+  },
   imageButton: {
     border: transparentize(0.73, colors.grey),
   },

@@ -26,12 +26,15 @@ import { ImageButton } from './Button/ImageButton';
 import { FlatCardItem } from './List/FlatCardItem';
 import { RatingField } from './Field/RatingField';
 import { Dialog } from './Overlay/Dialog/Dialog';
+import { CheckBox } from './CheckBox/CheckBox';
+import { Link } from './Typography/Link';
 
 export {
   Avatar,
   Chip,
   Button,
   Typography,
+  Link,
   ImageButton,
   CardImage,
   BoxImage,
@@ -43,6 +46,7 @@ export {
   CardItem,
   BigButton,
   Units,
+  CheckBox,
   Item,
   Field,
   SearchField,

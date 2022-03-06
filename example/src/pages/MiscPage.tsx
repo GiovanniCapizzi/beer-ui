@@ -8,7 +8,16 @@ import {
   faShoppingCart,
   faUserCircle,
 } from '@fortawesome/free-solid-svg-icons';
-import { Avatar, BottomBar, Item, Rating, Units } from 'beer-ui';
+import {
+  Avatar,
+  BottomBar,
+  CheckBox,
+  Item,
+  Link,
+  Rating,
+  Typography,
+  Units,
+} from 'beer-ui';
 
 const dish = require('../res/budae-jigae.png');
 
@@ -28,6 +37,9 @@ const styles = StyleSheet.create({
   },
   rating: {
     marginVertical: 4,
+  },
+  spaceLeft: {
+    marginLeft: 8,
   },
 });
 
@@ -60,6 +72,7 @@ export default function MiscPage() {
   const [count, setCount] = useState(0);
   const [selectedIcon, setSelectedIcon] = useState('Home');
   const [starLevel, setStarLevel] = useState(3);
+  const [checkValue, setCheckValue] = useState(false);
 
   return (
     <View style={styles.container}>
@@ -154,6 +167,32 @@ export default function MiscPage() {
               size="large"
               level={starLevel}
               onPress={(level) => setStarLevel(level)}
+            />
+          </View>
+          <Text />
+          <View style={styles.stretch}>
+            <CheckBox
+              variant="primary"
+              size="large"
+              value={checkValue}
+              component={
+                <>
+                  <Typography
+                    variant="secondary"
+                    text="I've read the "
+                    size="small"
+                    textStyle={styles.spaceLeft}
+                  />
+                  <Link
+                    variant="secondary"
+                    text="terms"
+                    size="small"
+                    onPress={console.log}
+                  />
+                  <Typography variant="secondary" text="." size="small" />
+                </>
+              }
+              setValue={setCheckValue}
             />
           </View>
         </ScrollView>
