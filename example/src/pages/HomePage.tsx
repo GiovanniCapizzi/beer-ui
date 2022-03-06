@@ -14,6 +14,7 @@ import {
   faTags,
   faTerminal,
   faTextHeight,
+  faWindowMaximize,
 } from '@fortawesome/free-solid-svg-icons';
 
 const styles = StyleSheet.create({
@@ -36,6 +37,7 @@ const components = {
   Cards: faCreditCard,
   Headers: faHeading,
   Overlay: faSquareFull,
+  Dialog: faWindowMaximize,
   Carousel: faImage,
   Misc: faStream,
 };

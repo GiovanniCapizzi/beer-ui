@@ -19,12 +19,13 @@ import { SearchField } from './Field/SearchField';
 import { BottomBar } from './BottomBar/BottomBar';
 import { UnitField } from './Field/UnitField';
 import { Avatar } from './Image/Avatar';
-import { Overlay } from './Common/Overlay/Overlay';
+import { Overlay } from './Overlay/Overlay';
 import { Rating } from './Rating/Rating';
 import { Toolbar } from './Headers/Toolbar';
 import { ImageButton } from './Button/ImageButton';
 import { FlatCardItem } from './List/FlatCardItem';
 import { RatingField } from './Field/RatingField';
+import { Dialog } from './Overlay/Dialog/Dialog';
 
 export {
   Avatar,
@@ -52,6 +53,7 @@ export {
   Overlay,
   Toolbar,
   Rating,
+  Dialog,
   FlatCardItem,
   ColorsProps,
   defaultColors,

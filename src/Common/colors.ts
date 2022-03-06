@@ -60,6 +60,11 @@ export const buildTheme = (colors: ColorsProps) => ({
     background: colors.accent.base,
     foreground: colors.accent.light,
   },
+  dialog: {
+    background: colors.white,
+    closeIcon: transparentize(0.6, colors.black),
+    header: colors.accent.base,
+  },
   header: {
     firstLayer: colors.accent.light,
     secondLayer: colors.accent.base,

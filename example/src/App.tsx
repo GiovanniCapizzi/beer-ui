@@ -16,6 +16,7 @@ import MiscPage from './pages/MiscPage';
 import FieldsPage from './pages/FieldsPage';
 import OverlayPage from './pages/OverlayPage';
 import CardPage from './pages/CardPage';
+import DialogPage from './pages/DialogPage';
 
 const Stack = createNativeStackNavigator();
 
@@ -39,6 +40,7 @@ const Router = () => {
           <Stack.Screen name="Misc" component={MiscPage} />
           <Stack.Screen name="Cards" component={CardPage} />
           <Stack.Screen name="Overlay" component={OverlayPage} />
+          <Stack.Screen name="Dialog" component={DialogPage} />
         </Stack.Navigator>
       </NavigationContainer>
     </ThemeProvider>

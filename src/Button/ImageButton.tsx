@@ -1,5 +1,5 @@
 import * as React from 'react';
-import type { ImageSourcePropType } from 'react-native';
+import type { ImageSourcePropType, ImageURISource } from 'react-native';
 import { Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { useTheme } from 'beer-ui';
 
@@ -7,7 +7,7 @@ type style = Record<string, string | number>;
 
 export interface ImageButtonProps {
   onPress: () => any;
-  source: ImageSourcePropType;
+  source: ImageURISource | ImageSourcePropType;
   width: number;
   height: number;
   style?: style | style[];
