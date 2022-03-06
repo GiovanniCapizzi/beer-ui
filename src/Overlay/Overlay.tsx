@@ -3,6 +3,7 @@ import { Dimensions, Modal, StyleSheet, TouchableOpacity } from 'react-native';
 import { useTheme } from 'beer-ui';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { transparentize } from 'polished';
 
 const { width, height } = Dimensions.get('window');
 
@@ -40,6 +41,7 @@ export const Overlay: React.FC<OverlayProps> = ({
   style,
 }) => {
   const { overlay: palette } = useTheme();
+  const bgColor = transparentize(1 - opacity, palette.background);
   return (
     <Modal
       animationType="fade"
@@ -49,11 +51,7 @@ export const Overlay: React.FC<OverlayProps> = ({
     >
       <TouchableOpacity
         activeOpacity={0.6}
-        style={[
-          styles.root,
-          style,
-          { backgroundColor: palette.background, opacity },
-        ]}
+        style={[styles.root, style, { backgroundColor: bgColor }]}
         onPress={onOverlayClick}
       >
         {onClose && (
