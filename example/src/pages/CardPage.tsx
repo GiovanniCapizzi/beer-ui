@@ -6,7 +6,7 @@ import {
   faUsers,
   faUtensils,
 } from '@fortawesome/free-solid-svg-icons';
-import { CardItem, FlatCardItem } from 'beer-ui';
+import { Card, CardItem, FlatCardItem } from 'beer-ui';
 
 const styles = StyleSheet.create({
   container: {
@@ -83,6 +83,16 @@ export default function CardPage() {
                 onPress: (level) => setStarLevel(level),
               }}
             />
+          </View>
+          <Text />
+          <View>
+            <Card
+              shadow
+              border
+              action={{ title: 'Action', onPress: console.log }}
+            >
+              <Text>Card Example</Text>
+            </Card>
           </View>
           <Text />
         </ScrollView>

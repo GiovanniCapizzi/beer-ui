@@ -34,6 +34,13 @@ export const buildTheme = (colors: ColorsProps) => ({
   boxImage: {
     text: colors.white,
   },
+  card: {
+    background: colors.white,
+    accent: {
+      primary: colors.accent.light,
+      secondary: colors.accent.base,
+    },
+  },
   text: {
     primary: colors.accent.base,
     secondary: colors.grey,

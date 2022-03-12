@@ -125,6 +125,8 @@ export default function ButtonPage() {
             title="Secondary slim button"
             onPress={() => {}}
             variant="secondary"
+            icon={faEye}
+            iconDirection="left"
           />
         </View>
         <Text />

@@ -28,6 +28,7 @@ import { RatingField } from './Field/RatingField';
 import { Dialog } from './Overlay/Dialog/Dialog';
 import { CheckBox } from './CheckBox/CheckBox';
 import { Link } from './Typography/Link';
+import { Card } from './Card/Card';
 
 export {
   Avatar,
@@ -41,6 +42,7 @@ export {
   RoundButton,
   Line,
   Header,
+  Card,
   ThemeProvider,
   useTheme,
   CardItem,
