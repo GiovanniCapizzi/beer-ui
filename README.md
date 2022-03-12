@@ -2,9 +2,11 @@
 
 ![logo](./res/logo.png)
 
-# beer-ui
+# Beer-UI
 
-UI Components for ReactNative
+UI Components for ReactNative.
+
+**Still at early stages.**
 
 ## Installation
 
