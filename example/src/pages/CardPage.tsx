@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
 import {
   faClock,
@@ -7,6 +7,11 @@ import {
   faUtensils,
 } from '@fortawesome/free-solid-svg-icons';
 import { Card, CardItem, FlatCardItem } from 'beer-ui';
+import {
+  actions,
+  RichEditor,
+  RichToolbar,
+} from 'react-native-pell-rich-editor';
 
 const styles = StyleSheet.create({
   container: {
@@ -43,6 +48,7 @@ const imageSource = {
 export default function CardPage() {
   const [itemSelected, setItemSelected] = useState(false);
   const [starLevel, setStarLevel] = useState(3);
+  const editorRef = useRef(null);
 
   return (
     <View style={styles.container}>
@@ -92,6 +98,28 @@ export default function CardPage() {
               action={{ title: 'Action', onPress: console.log }}
             >
               <Text>Card Example</Text>
+            </Card>
+          </View>
+          <Text />
+          <View>
+            <Card shadow>
+              <RichToolbar
+                editor={editorRef}
+                actions={[
+                  actions.setBold,
+                  actions.setItalic,
+                  actions.insertBulletsList,
+                  actions.insertOrderedList,
+                  actions.insertImage,
+                ]}
+              />
+              <RichEditor
+                ref={editorRef}
+                initialContentHTML={
+                  'Hello <b>World</b> <p>this is a new paragraph</p> <p>this is another new paragraph</p>'
+                }
+                editorInitializedCallback={() => console.log('Started')}
+              />
             </Card>
           </View>
           <Text />
