@@ -1,3 +1,7 @@
+
+
+![logo](./res/logo.png)
+
 # beer-ui
 
 UI Components for ReactNative
