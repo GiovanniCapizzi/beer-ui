@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     padding: 12,
   },
   units: {
-    ...lightShadowStyle,
+    borderWidth: 1,
     paddingTop: 42,
     paddingBottom: 12,
     marginTop: -28, // min-height 56/2
@@ -117,6 +117,7 @@ export const UnitField: React.FC<UnitFieldProps> = ({
   const fontSize = textSize[size];
   const [showUnits, setShowUnits] = useState(false);
   const color = invalidText ? palette.error : palette.color;
+  const borderColor = invalidText ? palette.border.error : palette.border.color;
 
   const unitRows = useMemo(
     () =>
@@ -182,7 +183,9 @@ export const UnitField: React.FC<UnitFieldProps> = ({
           />
         </View>
       )}
-      {showUnits && <View style={styles.units}>{unitRows}</View>}
+      {showUnits && (
+        <View style={[styles.units, { borderColor }]}>{unitRows}</View>
+      )}
     </View>
   );
 };

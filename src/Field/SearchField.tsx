@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   results: {
-    ...lightShadowStyle,
+    borderWidth: 1,
     paddingTop: 42,
     paddingBottom: 12,
     marginTop: -28, // min-height 56/2
@@ -180,7 +180,7 @@ export const SearchField: React.FC<SearchFieldProps> = ({
         )}
       </TextFieldWrap>
       {!!results && (
-        <View style={styles.results}>
+        <View style={[styles.results, { borderColor: palette.borderColor }]}>
           {results.length ? (
             data
           ) : (
