@@ -20,4 +20,4 @@ See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the 
 
 ## License
 
-MIT
+[GPL-3.0](https://github.com/GiovanniCapizzi/beer-ui/blob/main/LICENSE)
