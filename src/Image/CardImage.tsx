@@ -40,9 +40,11 @@ const Container = styled(TouchableOpacity)<ContainerProps>`
   border: ${(p) => (p.bordered ? `2px solid ${p.color}` : 'none')};
 `;
 
+// max-width: fix the full size on small screen ...
 const Picture = styled(Image)`
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+  max-width: 100%;
 `;
 
 const Title = styled(View)<TitleProps>`
@@ -60,7 +62,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   rounded: {
-    borderRadius: 8,
+    borderBottomLeftRadius: 8,
+    borderBottomRightRadius: 8,
   },
 });
 
