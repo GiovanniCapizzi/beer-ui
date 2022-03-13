@@ -12,9 +12,8 @@ import {
 import styled from 'styled-components';
 import { Typography, useTheme } from 'beer-ui';
 import { shadowStyle } from '../Common/styles';
-import type { IconProp, IconName } from '@fortawesome/fontawesome-svg-core';
+import type { IconName, IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import textSize from '../Common/sizes';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 const imageSize = { width: 100, height: 100 };
@@ -115,20 +114,14 @@ export const CardItem: React.FC<CardItemProps> = ({
     () =>
       data?.map((item, index) => (
         <View key={index} style={styles.footerItem}>
-          <FontAwesomeIcon
-            icon={item.icon}
-            color={palette.highlight}
-            size={textSize.medium}
-          />
+          <FontAwesomeIcon icon={item.icon} color={palette.highlight} />
           <Typography
             text={item.text}
-            size="medium"
             textStyle={[styles.spaceLeft, { color: palette.highlight }]}
           />
           {index < data.length - 1 ? (
             <Typography
               text={'|'}
-              size="medium"
               textStyle={[styles.spaceLeft, { color: palette.highlight }]}
             />
           ) : (
