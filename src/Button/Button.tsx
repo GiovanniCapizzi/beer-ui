@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import {
   ButtonProps as NativeButtonProps,
   StyleSheet,
@@ -63,6 +63,15 @@ export const Button: React.FC<ButtonProps> = ({
   );
   const [background, setBackground] = useState(palette.background);
   const [textColor, setTextColor] = useState(palette.text);
+
+  useEffect(() => {
+    // Fix live palette change ...
+    // In each render ..
+    if (palette) {
+      setBackground(palette.background);
+      setTextColor(palette.text);
+    }
+  }, [palette]);
 
   const fontIcon = icon && (
     <FontAwesomeIcon
