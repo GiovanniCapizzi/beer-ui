@@ -32,6 +32,7 @@ interface ContainerProps extends TouchableOpacityProps {
 
 interface TitleProps extends ViewProps {
   color: string;
+  maxWidth?: number;
 }
 
 const Container = styled(TouchableOpacity)<ContainerProps>`
@@ -48,6 +49,7 @@ const Title = styled(View)<TitleProps>`
   background: ${(p) => p.color};
   padding: 8px 16px;
   align-items: center;
+  max-width: ${(p) => (p.maxWidth ? `${p.maxWidth}px` : 'auto')};
   justify-content: center;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -95,7 +97,11 @@ export const CardImage: React.FC<CardImageProps> = ({
         source={source}
         style={[!title && styles.rounded, !fullSize && { width, height }]}
       />
-      {title && <Title color={palette[variant]}>{titleContent}</Title>}
+      {title && (
+        <Title maxWidth={width} color={palette[variant]}>
+          {titleContent}
+        </Title>
+      )}
     </Container>
   );
 };
