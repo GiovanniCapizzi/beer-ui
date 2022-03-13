@@ -32,7 +32,11 @@ export const CheckBox: React.FC<CheckBoxProps> = ({
   const { checkBox: palette } = useTheme();
   const color = palette[variant];
   return (
-    <TouchableOpacity onPress={() => setValue(!value)} style={styles.row}>
+    <TouchableOpacity
+      onPress={() => setValue(!value)}
+      style={styles.row}
+      activeOpacity={0.7}
+    >
       <FontAwesomeIcon
         icon={value ? faSquare : faCheckSquare}
         color={color}

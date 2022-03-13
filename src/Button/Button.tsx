@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import {
   ButtonProps as NativeButtonProps,
   StyleSheet,
@@ -61,11 +61,13 @@ export const Button: React.FC<ButtonProps> = ({
     () => (slim ? slimButton[variant] : button[variant]),
     [button, slim, slimButton, variant]
   );
+  const [background, setBackground] = useState(palette.background);
+  const [textColor, setTextColor] = useState(palette.text);
 
   const fontIcon = icon && (
     <FontAwesomeIcon
       icon={icon}
-      color={palette.text}
+      color={textColor}
       style={iconDirection === 'right' ? styles.spaceLeft : styles.spaceRight}
     />
   );
@@ -73,15 +75,23 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <TouchableOpacityStyle
       activeOpacity={0.6}
-      backgroundColor={palette.background}
+      backgroundColor={background}
       borderColor={palette.border}
+      onPressIn={() => {
+        setBackground(palette.border);
+        setTextColor(palette.textAccent);
+      }}
+      onPressOut={() => {
+        setBackground(palette.background);
+        setTextColor(palette.text);
+      }}
       slim={slim}
       {...props}
     >
       {icon && iconDirection === 'left' && fontIcon}
       <Typography
         text={title}
-        textStyle={[styles.bold, { color: palette.text }]}
+        textStyle={[styles.bold, { color: textColor }]}
       />
       {icon && iconDirection === 'right' && fontIcon}
     </TouchableOpacityStyle>

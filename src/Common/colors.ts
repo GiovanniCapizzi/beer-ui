@@ -88,16 +88,19 @@ export const buildTheme = (colors: ColorsProps) => ({
   button: {
     primary: {
       text: colors.white,
+      textAccent: colors.white,
       background: colors.accent.light,
       border: colors.accent.light,
     },
     secondary: {
       text: colors.accent.light,
+      textAccent: colors.white,
       background: colors.white,
       border: colors.accent.light,
     },
     white: {
       text: colors.white,
+      textAccent: colors.accent.base,
       background: 'transparent',
       border: colors.white,
     },
@@ -128,16 +131,19 @@ export const buildTheme = (colors: ColorsProps) => ({
   slimButton: {
     primary: {
       text: colors.white,
+      textAccent: colors.white,
       background: colors.accent.light,
       border: colors.accent.light,
     },
     secondary: {
       text: colors.accent.base,
+      textAccent: colors.white,
       background: colors.white,
       border: colors.accent.base,
     },
     white: {
       text: colors.white,
+      textAccent: colors.accent.base,
       background: 'transparent',
       border: colors.white,
     },
