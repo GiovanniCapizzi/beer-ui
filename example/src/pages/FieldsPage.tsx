@@ -171,6 +171,9 @@ export default function FieldsPage() {
               rating={rating}
             />
           </View>
+          <Text />
+          <Text />
+          <Text />
         </View>
       </ScrollView>
     </SafeAreaView>

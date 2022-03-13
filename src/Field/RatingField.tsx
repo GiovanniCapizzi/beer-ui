@@ -49,6 +49,11 @@ const RatingFieldWrap = styled(View)<RatingFieldWrapProps>`
 `;
 
 const styles = StyleSheet.create({
+  starView: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   starRow: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -63,12 +68,13 @@ const styles = StyleSheet.create({
     marginLeft: 4,
   },
   stars: {
-    ...lightShadowStyle,
-    paddingTop: 42,
+    paddingTop: 16,
     paddingBottom: 12,
-    marginTop: -28, // min-height 56/2
+    marginTop: -12, // half height
     backgroundColor: 'white',
-    borderRadius: 8,
+    borderBottomLeftRadius: 8,
+    borderBottomRightRadius: 8,
+    borderWidth: 1,
   },
 });
 
@@ -140,13 +146,16 @@ export const RatingField: React.FC<RatingFieldProps> = ({
         background={palette.background}
         style={shadow && !showSelect && lightShadowStyle}
       >
-        <RatingView
-          color={color}
-          placeholder={placeholder}
-          value={rating}
-          fontSize={fontSize}
-        />
-        <TouchableOpacity onPress={() => setShowSelect(!showSelect)}>
+        <TouchableOpacity
+          onPress={() => setShowSelect(!showSelect)}
+          style={styles.starView}
+        >
+          <RatingView
+            color={color}
+            placeholder={placeholder}
+            value={rating}
+            fontSize={fontSize}
+          />
           <FontAwesomeIcon
             icon={showSelect ? faChevronUp : faChevronDown}
             color={color}
@@ -154,7 +163,9 @@ export const RatingField: React.FC<RatingFieldProps> = ({
           />
         </TouchableOpacity>
       </RatingFieldWrap>
-      {showSelect && <View style={styles.stars}>{starRows}</View>}
+      {showSelect && (
+        <View style={[styles.stars, { borderColor: color }]}>{starRows}</View>
+      )}
     </View>
   );
 };
