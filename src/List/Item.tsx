@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { StyleSheet, TouchableOpacity, View, ViewStyle } from 'react-native';
 import styled from 'styled-components';
-import { Typography, Units, useTheme } from 'beer-ui';
+import { Typography, Units, useTheme } from '@giovannicapizzi/beer-ui';
 import type { UnitsProps } from '../Units/Units';
 
 export interface ItemProps {

@@ -1,7 +1,12 @@
 import * as React from 'react';
 import { useEffect, useMemo, useState } from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { Field, RatingField, SearchField, UnitField } from 'beer-ui';
+import {
+  Field,
+  RatingField,
+  SearchField,
+  UnitField,
+} from '@giovannicapizzi/beer-ui';
 
 const dish = require('../res/budae-jigae.png');
 

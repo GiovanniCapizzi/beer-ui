@@ -1,5 +1,20 @@
 import { Action, action } from 'easy-peasy';
-import { ColorsProps, defaultColors } from 'beer-ui';
+import { defaultColors } from '@giovannicapizzi/beer-ui';
+
+export interface ColorsProps {
+  accent: {
+    light: string;
+    base: string;
+    dark: string;
+  };
+  white: string;
+  grey: string;
+  black: string;
+  background: {
+    light: string;
+  };
+  warn: string;
+}
 
 export interface UIModel {
   customTheme: ColorsProps;

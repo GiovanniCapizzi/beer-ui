@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import type { TypographyProps } from '../Typography/Typography';
-import { Typography, useTheme } from 'beer-ui';
+import { Typography, useTheme } from '@giovannicapizzi/beer-ui';
 
 export interface AvatarProps {
   source: ImageSourcePropType;

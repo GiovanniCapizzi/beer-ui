@@ -1,17 +1,42 @@
+<div align="center">
+    <img src="./res/logo.png" alt="beerui" />
+    <h1 align="center">BeerUI</h1>
+</div>
 
 
-![logo](./res/logo.png)
-
-# Beer-UI
 
 UI Components for ReactNative.
 
-**Still at early stages.**
+**Still in early stages.**
+
+[Demo] (https://snack.expo.dev/@orionlabs/beer-ui-demo)
+
+
+
+## Known issues:
+
+- **Android**: TouchableOpacity applies opacity through the component elements, not only the root.
+- **Android**: RichText editor crashes in the app demo.
+
+## Todo:
+
+- Fix linking `react-native-webview`.
+
+## Known issues:
+
+- **Android**: TouchableOpacity applies opacity through the component elements, not only the root.
+- **Android**: RichText editor crashes in the app demo.
 
 ## Installation
 
 ```sh
-npm install beer-ui
+yarn add @giovannicapizzi/beer-ui
+```
+
+## Running with expo
+```sh
+yarn example ios
+yarn example android
 ```
 
 ## Contributing

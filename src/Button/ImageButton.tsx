@@ -1,7 +1,7 @@
 import * as React from 'react';
 import type { ImageSourcePropType, ImageURISource } from 'react-native';
 import { Image, StyleSheet, TouchableOpacity } from 'react-native';
-import { useTheme } from 'beer-ui';
+import { useTheme } from '@giovannicapizzi/beer-ui';
 
 type style = Record<string, string | number>;
 

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useMemo } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
-import { Button, Line, Typography } from 'beer-ui';
+import { Button, Line, Typography } from '@giovannicapizzi/beer-ui';
 import {
   faCreditCard,
   faHeading,

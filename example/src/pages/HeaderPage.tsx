@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useMemo } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
-import { Button, Header, Toolbar, Typography } from 'beer-ui';
+import { Button, Header, Toolbar, Typography } from '@giovannicapizzi/beer-ui';
 import { faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons';
 
 const appLogo = require('../res/app-logo.png');

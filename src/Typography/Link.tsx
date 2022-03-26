@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StyleProp, StyleSheet, TextStyle } from 'react-native';
-import { Typography, useTheme } from 'beer-ui';
+import { Typography, useTheme } from '@giovannicapizzi/beer-ui';
 
 export interface LinkProps {
   text: string;

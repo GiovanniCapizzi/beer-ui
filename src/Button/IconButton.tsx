@@ -2,7 +2,7 @@ import * as React from 'react';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import type { IconProp, IconName } from '@fortawesome/fontawesome-svg-core';
-import { Typography, useTheme } from 'beer-ui';
+import { Typography, useTheme } from '@giovannicapizzi/beer-ui';
 
 export interface IconButtonProps {
   active?: boolean;

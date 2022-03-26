@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useRef } from 'react';
-import { Button, Line, Typography } from 'beer-ui';
+import { Button, Line, Typography } from '@giovannicapizzi/beer-ui';
 import { SafeAreaView, ScrollView, StyleSheet, View } from 'react-native';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { CardCarousel } from '../external/Carousel/CardCarousel';

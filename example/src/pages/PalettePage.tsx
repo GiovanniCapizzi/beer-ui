@@ -7,7 +7,12 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { Button, defaultColors, Line, Typography } from 'beer-ui';
+import {
+  Button,
+  defaultColors,
+  Line,
+  Typography,
+} from '@giovannicapizzi/beer-ui';
 import ColorPicker from 'react-native-wheel-color-picker';
 import { useStoreActions, useStoreState } from '../redux/store';
 import jp from 'jsonpath';

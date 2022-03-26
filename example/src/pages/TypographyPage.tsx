@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { Typography } from 'beer-ui';
+import { Typography } from '@giovannicapizzi/beer-ui';
 
 const styles = StyleSheet.create({
   container: {

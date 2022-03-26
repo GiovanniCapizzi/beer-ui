@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StyleSheet, TouchableOpacity, View, ViewStyle } from 'react-native';
-import { Typography, useTheme } from 'beer-ui';
+import { Typography, useTheme } from '@giovannicapizzi/beer-ui';
 import styled from 'styled-components';
 import { lightShadowStyle } from '../Common/styles';
 

@@ -7,7 +7,7 @@ import {
   ViewStyle,
 } from 'react-native';
 import styled from 'styled-components';
-import { Rating, Typography, useTheme } from 'beer-ui';
+import { Rating, Typography, useTheme } from '@giovannicapizzi/beer-ui';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import type { RatingProps } from '../Rating/Rating';

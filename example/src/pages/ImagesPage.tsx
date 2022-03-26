@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, Text } from 'react-native';
-import { BoxImage, CardImage } from 'beer-ui';
+import { BoxImage, CardImage } from '@giovannicapizzi/beer-ui';
 
 const dish = require('../res/budae-jigae.png');
 

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useMemo } from 'react';
 import { StyleSheet, View, ViewStyle } from 'react-native';
 import styled from 'styled-components';
-import { IconButton, RoundButton, useTheme } from 'beer-ui';
+import { IconButton, RoundButton, useTheme } from '@giovannicapizzi/beer-ui';
 import type { IconName, IconProp } from '@fortawesome/fontawesome-svg-core';
 
 interface BottomBarIcon {

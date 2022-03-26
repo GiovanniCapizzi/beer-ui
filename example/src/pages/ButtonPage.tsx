@@ -7,7 +7,7 @@ import {
   ImageButton,
   RoundButton,
   useTheme,
-} from 'beer-ui';
+} from '@giovannicapizzi/beer-ui';
 import {
   faArrowLeft,
   faArrowRight,

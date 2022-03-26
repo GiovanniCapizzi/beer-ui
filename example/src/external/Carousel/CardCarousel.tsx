@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Carousel from 'react-native-snap-carousel';
-import { CardImage } from 'beer-ui';
+import { CardImage } from '@giovannicapizzi/beer-ui';
 import { Dimensions, ImageSourcePropType } from 'react-native';
 
 const { width: screenWidth } = Dimensions.get('window');

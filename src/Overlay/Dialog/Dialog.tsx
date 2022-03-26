@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
-import { Line, Overlay, Typography, useTheme } from 'beer-ui';
+import { Line, Overlay, Typography, useTheme } from '@giovannicapizzi/beer-ui';
 import styled from 'styled-components';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { StyleProp, Text, TextStyle, TouchableOpacity } from 'react-native';
 import textSize from '../Common/sizes';
-import { useTheme } from 'beer-ui';
+import { useTheme } from '@giovannicapizzi/beer-ui';
 
 export interface TypographyProps {
   text: string;

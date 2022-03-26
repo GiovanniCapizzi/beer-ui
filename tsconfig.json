@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "beer-ui": ["./src/index"]
+      "@giovannicapizzi/beer-ui": ["./src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,

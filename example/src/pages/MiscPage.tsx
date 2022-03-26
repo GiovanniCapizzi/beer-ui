@@ -17,7 +17,7 @@ import {
   Rating,
   Typography,
   Units,
-} from 'beer-ui';
+} from '@giovannicapizzi/beer-ui';
 
 const dish = require('../res/budae-jigae.png');
 

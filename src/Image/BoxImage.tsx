@@ -7,9 +7,9 @@ import {
   View,
 } from 'react-native';
 import styled from 'styled-components';
-import { Typography } from 'beer-ui';
+import { Typography } from '@giovannicapizzi/beer-ui';
 import { shadowStyle } from '../Common/styles';
-import { useTheme } from 'beer-ui';
+import { useTheme } from '@giovannicapizzi/beer-ui';
 
 export interface BoxImageProps {
   source: ImageSourcePropType;

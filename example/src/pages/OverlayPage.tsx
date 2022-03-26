@@ -1,7 +1,12 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
-import { Button, FlatCardItem, Overlay, Typography } from 'beer-ui';
+import {
+  Button,
+  FlatCardItem,
+  Overlay,
+  Typography,
+} from '@giovannicapizzi/beer-ui';
 
 const styles = StyleSheet.create({
   container: {

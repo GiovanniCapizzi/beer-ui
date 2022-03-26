@@ -6,7 +6,7 @@ import {
   faUsers,
   faUtensils,
 } from '@fortawesome/free-solid-svg-icons';
-import { Card, CardItem, FlatCardItem } from 'beer-ui';
+import { Card, CardItem, FlatCardItem } from '@giovannicapizzi/beer-ui';
 import {
   actions,
   RichEditor,

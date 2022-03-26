@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import type { IconProp, IconName } from '@fortawesome/fontawesome-svg-core';
 import { lightShadowStyle } from '../Common/styles';
-import { Typography } from 'beer-ui';
-import { useTheme } from 'beer-ui';
+import { Typography } from '@giovannicapizzi/beer-ui';
+import { useTheme } from '@giovannicapizzi/beer-ui';
 
 export interface RoundButtonProps {
   title?: string;

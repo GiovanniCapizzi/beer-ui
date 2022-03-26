@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import styled from 'styled-components';
-import { Typography } from 'beer-ui';
+import { Typography } from '@giovannicapizzi/beer-ui';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from '../Theme/ThemeProvider';

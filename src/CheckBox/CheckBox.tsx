@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StyleSheet, TouchableOpacity, ViewStyle } from 'react-native';
-import { useTheme } from 'beer-ui';
+import { useTheme } from '@giovannicapizzi/beer-ui';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import textSize from '../Common/sizes';
 import { faCheckSquare } from '@fortawesome/free-solid-svg-icons';

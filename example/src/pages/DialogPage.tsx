@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
-import { Button, Dialog, RoundButton } from 'beer-ui';
+import { Button, Dialog, RoundButton } from '@giovannicapizzi/beer-ui';
 import { faImage, faTags } from '@fortawesome/free-solid-svg-icons';
 
 const mockContentText =

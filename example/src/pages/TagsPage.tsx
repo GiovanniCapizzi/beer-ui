@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useMemo, useState } from 'react';
-import { Chip, Line, Typography } from 'beer-ui';
+import { Chip, Line, Typography } from '@giovannicapizzi/beer-ui';
 import { SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 const styles = StyleSheet.create({

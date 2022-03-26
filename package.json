@@ -1,6 +1,6 @@
 {
-  "name": "beer-ui",
-  "version": "0.1.0",
+  "name": "@giovannicapizzi/beer-ui",
+  "version": "0.1.5",
   "description": "UI Components for ReactNative",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -37,8 +37,8 @@
     "android"
   ],
   "repository": "https://github.com/GiovanniCapizzi/beer-ui",
-  "author": "Giovanni Capizzi, Gabriele Visconti <capizzig94@live.com> (https://github.com/GiovanniCapizzi)",
-  "license": "MIT",
+  "author": "Giovanni Capizzi <capizzig94@live.com> (https://github.com/GiovanniCapizzi)",
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/GiovanniCapizzi/beer-ui/issues"
   },
@@ -90,7 +90,10 @@
       "tagName": "v${version}"
     },
     "npm": {
-      "publish": true
+      "publish": true,
+      "publishArgs": [
+        "--access public"
+      ]
     },
     "github": {
       "release": true

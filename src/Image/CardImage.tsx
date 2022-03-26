@@ -9,7 +9,7 @@ import {
   ViewProps,
 } from 'react-native';
 import styled from 'styled-components';
-import { Typography, useTheme } from 'beer-ui';
+import { Typography, useTheme } from '@giovannicapizzi/beer-ui';
 import { shadowStyle } from '../Common/styles';
 
 export interface CardImageProps {

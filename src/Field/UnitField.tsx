@@ -9,7 +9,7 @@ import {
   View,
 } from 'react-native';
 import textSize from '../Common/sizes';
-import { Typography, useTheme } from 'beer-ui';
+import { Typography, useTheme } from '@giovannicapizzi/beer-ui';
 import styled from 'styled-components';
 import { lightShadowStyle } from '../Common/styles';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';

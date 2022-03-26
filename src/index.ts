@@ -1,4 +1,3 @@
-import type { ColorsProps } from './Common/colors';
 import { defaultColors } from './Common/colors';
 import { ThemeProvider, useTheme } from './Theme/ThemeProvider';
 import { Button } from './Button/Button';
@@ -61,6 +60,5 @@ export {
   Rating,
   Dialog,
   FlatCardItem,
-  ColorsProps,
   defaultColors,
 };

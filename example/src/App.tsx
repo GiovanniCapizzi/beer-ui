@@ -8,7 +8,7 @@ import ImagesPage from './pages/ImagesPage';
 import TagsPage from './pages/TagsPage';
 import CarouselPage from './pages/CarouselPage';
 import HeaderPage from './pages/HeaderPage';
-import { ColorsProps, ThemeProvider } from 'beer-ui';
+import { ThemeProvider } from '@giovannicapizzi/beer-ui';
 import PalettePage from './pages/PalettePage';
 import { StoreProvider } from 'easy-peasy';
 import { store, useStoreState } from './redux/store';
@@ -17,6 +17,7 @@ import FieldsPage from './pages/FieldsPage';
 import OverlayPage from './pages/OverlayPage';
 import CardPage from './pages/CardPage';
 import DialogPage from './pages/DialogPage';
+import { ColorsProps } from './redux/model/ui';
 
 const Stack = createNativeStackNavigator();
 
